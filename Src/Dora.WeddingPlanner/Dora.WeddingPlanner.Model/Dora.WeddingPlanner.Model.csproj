@@ -43,6 +43,11 @@
     <Compile Include="Wedding.cs" />
     <Compile Include="WeddingGuest.cs" />
     <Compile Include="WeddingTask.cs" />
+    <Compile Include="WeddingTaskOutcome.cs" />
+    <Compile Include="WeddingTaskOutcomes\ComposedOutcome.cs" />
+    <Compile Include="WeddingTaskOutcomes\ImportantOutcome.cs" />
+    <Compile Include="WeddingTaskOutcomes\NoOutcome.cs" />
+    <Compile Include="WeddingTaskOutcomes\SimpleOutcome.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

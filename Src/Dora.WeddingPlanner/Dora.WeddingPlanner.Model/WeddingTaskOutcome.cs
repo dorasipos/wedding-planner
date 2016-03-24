@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dora.WeddingPlanner.Model
 {
-    public class WeddingGuest
+    public abstract class WeddingTaskOutcome
     {
     }
 }

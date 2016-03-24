@@ -10,6 +10,10 @@ namespace Dora.WeddingPlanner.TestingPlayground
     {
         static void Main(string[] args)
         {
+
+
+            Console.WriteLine("Done @ {0}", DateTime.Now);
+            Console.ReadLine();
         }
     }
 }

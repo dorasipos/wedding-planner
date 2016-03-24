@@ -8,8 +8,8 @@ namespace Dora.WeddingPlanner.Model
 {
     public class Wedding
     {
-        public IEnumerable<WeddingTask> Tasks { get; }
+        public IEnumerable<WeddingTask> Tasks { get; set; }
 
-        public IEnumerable<WeddingGuest> Guests { get; }
+        public IEnumerable<WeddingGuest> Guests { get; set; }
     }
 }
