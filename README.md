@@ -1,2 +1,2 @@
 # wedding-planner
-Wedding Planning App
+Wedding Planning Application
