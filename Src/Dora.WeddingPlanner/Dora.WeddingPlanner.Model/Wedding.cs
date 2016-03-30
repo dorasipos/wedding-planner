@@ -8,8 +8,27 @@ namespace Dora.WeddingPlanner.Model
 {
     public class Wedding
     {
-        public IEnumerable<WeddingTask> Tasks { get; set; }
+        private readonly Person bride;
+        private readonly Person groom;
+        private readonly List<WeddingTask> tasks = new List<WeddingTask>();
+        private readonly List<WeddingGuest> guests = new List<WeddingGuest>();
+        private readonly List<WeddingEvent> events = new List<WeddingEvent>();
 
-        public IEnumerable<WeddingGuest> Guests { get; set; }
+        public Wedding(Person bride, Person groom)
+        {
+            if (bride == null || groom == null)
+            {
+                throw new InvalidOperationException("Cannot have a wedding without both the bride and the groom");
+            }
+
+            this.bride = bride;
+            this.groom = groom;
+        }
+
+        public IReadOnlyList<WeddingEvent> Events { get { return this.events; } }
+
+        public IReadOnlyList<WeddingTask> Tasks { get { return this.tasks; } }
+
+        public IReadOnlyList<WeddingGuest> Guests { get { return this.guests; } }
     }
 }
