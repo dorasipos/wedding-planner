@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="BasicWeddingTask.cs" />
+    <Compile Include="Comment.cs" />
     <Compile Include="GeoLocation.cs" />
     <Compile Include="MandatoryWeddingTask.cs" />
     <Compile Include="Person.cs" />

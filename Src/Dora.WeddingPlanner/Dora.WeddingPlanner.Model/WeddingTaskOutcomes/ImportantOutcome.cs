@@ -8,5 +8,8 @@ namespace Dora.WeddingPlanner.Model.WeddingTaskOutcomes
 {
     public class ImportantOutcome : WeddingTaskOutcome
     {
+        public ImportantOutcome(string takeaway) : base(takeaway)
+        {
+        }
     }
 }

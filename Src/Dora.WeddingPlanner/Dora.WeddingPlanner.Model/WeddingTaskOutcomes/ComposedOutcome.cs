@@ -8,5 +8,8 @@ namespace Dora.WeddingPlanner.Model.WeddingTaskOutcomes
 {
     public class ComposedOutcome : WeddingTaskOutcome
     {
+        public ComposedOutcome(string takeaway) : base(takeaway)
+        {
+        }
     }
 }
