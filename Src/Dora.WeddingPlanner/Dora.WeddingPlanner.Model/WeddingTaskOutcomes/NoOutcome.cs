@@ -8,5 +8,9 @@ namespace Dora.WeddingPlanner.Model.WeddingTaskOutcomes
 {
     public class NoOutcome : WeddingTaskOutcome
     {
+        public override bool IsClosed()
+        {
+            return false;
+        }
     }
 }
