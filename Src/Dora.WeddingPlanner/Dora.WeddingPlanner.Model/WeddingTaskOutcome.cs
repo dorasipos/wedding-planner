@@ -9,13 +9,12 @@ namespace Dora.WeddingPlanner.Model
     {
         private readonly string notes;
         private readonly List<Comment> details;
+        protected readonly List<WeddingTask> relatedTasks = new List<WeddingTask>();
 
         public WeddingTaskOutcome(string takeaway)
         {
             this.notes = takeaway;
         }
-
-        private readonly List<WeddingTask> relatedTasks = new List<WeddingTask>();
 
         public string Notes { get { return this.notes; } }
 

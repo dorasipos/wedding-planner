@@ -8,8 +8,9 @@ namespace Dora.WeddingPlanner.Model.WeddingTaskOutcomes
 {
     public class ComposedOutcome : WeddingTaskOutcome
     {
-        public ComposedOutcome(string takeaway) : base(takeaway)
+        public ComposedOutcome(string takeaway, params WeddingTask[] relatedTasks) : base(takeaway)
         {
+            this.relatedTasks.AddRange(relatedTasks);
         }
     }
 }

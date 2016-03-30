@@ -11,10 +11,5 @@ namespace Dora.WeddingPlanner.Model.WeddingTaskOutcomes
         public SimpleOutcome(string takeaway) : base(takeaway)
         {
         }
-
-        public override bool IsClosed()
-        {
-            return true;
-        }
     }
 }
