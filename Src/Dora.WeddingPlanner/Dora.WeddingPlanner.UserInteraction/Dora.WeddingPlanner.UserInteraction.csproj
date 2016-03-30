@@ -40,14 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CreateWeddingCommand.cs" />
+    <Compile Include="Commands\ImAnInteractionCommand.cs" />
     <Compile Include="Mappers\DtoToModelMapper.cs" />
     <Compile Include="Mappers\Extensions.cs" />
     <Compile Include="Model\PersonDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UseCase\WeddingUseCase.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Dora.WeddingPlanner.Core\Dora.WeddingPlanner.Core.csproj">
+      <Project>{d6cc927d-b2ab-4686-be11-05b0b137eeea}</Project>
+      <Name>Dora.WeddingPlanner.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dora.WeddingPlanner.Model\Dora.WeddingPlanner.Model.csproj">
       <Project>{b69b1933-553d-4d55-b69b-560be88f08fa}</Project>
       <Name>Dora.WeddingPlanner.Model</Name>
