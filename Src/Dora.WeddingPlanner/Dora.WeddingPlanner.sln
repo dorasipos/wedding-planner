@@ -21,6 +21,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Web.Hos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Web.Server", "Dora.WeddingPlanner.Web.Server\Dora.WeddingPlanner.Web.Server.csproj", "{C2992FB8-314F-4A61-91B3-AC5C3B216453}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Dora.WeddingPlanner.Web.UI", "Dora.WeddingPlanner.Web.UI\", "{52266CF6-9C84-4A0E-A768-D828B16A78E4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_4001"
+		Debug.AspNetCompiler.PhysicalPath = "Dora.WeddingPlanner.Web.UI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4001\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_4001"
+		Release.AspNetCompiler.PhysicalPath = "Dora.WeddingPlanner.Web.UI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4001\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "4001"
+		SlnRelativePath = "Dora.WeddingPlanner.Web.UI\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +80,10 @@ Global
 		{C2992FB8-314F-4A61-91B3-AC5C3B216453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2992FB8-314F-4A61-91B3-AC5C3B216453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2992FB8-314F-4A61-91B3-AC5C3B216453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52266CF6-9C84-4A0E-A768-D828B16A78E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52266CF6-9C84-4A0E-A768-D828B16A78E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52266CF6-9C84-4A0E-A768-D828B16A78E4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{52266CF6-9C84-4A0E-A768-D828B16A78E4}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +92,6 @@ Global
 		{6793F0C9-DF5D-40D3-B843-CD01F4502207} = {77670FCD-B107-4CE5-9969-DFEB821E94EB}
 		{A99958AE-3FC9-4813-B647-F9EA5FED255B} = {77670FCD-B107-4CE5-9969-DFEB821E94EB}
 		{C2992FB8-314F-4A61-91B3-AC5C3B216453} = {77670FCD-B107-4CE5-9969-DFEB821E94EB}
+		{52266CF6-9C84-4A0E-A768-D828B16A78E4} = {77670FCD-B107-4CE5-9969-DFEB821E94EB}
 	EndGlobalSection
 EndGlobal
