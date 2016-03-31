@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandRunner.cs" />
+    <Compile Include="Commands\CommandResult.cs" />
     <Compile Include="Commands\CreateWeddingCommand.cs" />
+    <Compile Include="Commands\ExceptionCommandResult.cs" />
     <Compile Include="Commands\ImAnInteractionCommand.cs" />
+    <Compile Include="Commands\SuccessfulCommandResult.cs" />
     <Compile Include="Mappers\DtoToModelMapper.cs" />
     <Compile Include="Mappers\Extensions.cs" />
     <Compile Include="Model\PersonDto.cs" />
