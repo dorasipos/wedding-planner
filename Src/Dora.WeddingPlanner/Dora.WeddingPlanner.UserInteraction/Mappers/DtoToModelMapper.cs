@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dora.WeddingPlanner.UserInteraction.Mappers
 {
-    internal class DtoToModelMapper
+    internal static class DtoToModelMapper
     {
         public static Person Map(PersonDto dto)
         {

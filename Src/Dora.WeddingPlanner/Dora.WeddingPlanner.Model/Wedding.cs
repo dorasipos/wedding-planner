@@ -25,6 +25,9 @@ namespace Dora.WeddingPlanner.Model
             this.groom = groom;
         }
 
+        public Person Bride { get { return this.bride; } }
+        public Person Groom { get { return this.groom; } }
+
         public IReadOnlyList<WeddingEvent> Events { get { return this.events; } }
 
         public IReadOnlyList<WeddingTask> Tasks { get { return this.tasks; } }

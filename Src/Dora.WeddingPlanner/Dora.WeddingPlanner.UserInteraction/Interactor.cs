@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.Data;
 using Dora.WeddingPlanner.UserInteraction.Commands;
+using Dora.WeddingPlanner.UserInteraction.Queries;
 
 namespace Dora.WeddingPlanner.UserInteraction
 {
@@ -46,7 +47,14 @@ namespace Dora.WeddingPlanner.UserInteraction
         {
             EnsureInitialization();
 
-            return CommandRunner.Run(command);
+            return CommandAndQueryRunner.Run(command);
+        }
+
+        public static IEnumerable<T> Query<T>(ImAQuery<T> query)
+        {
+            EnsureInitialization();
+
+            return CommandAndQueryRunner.Query(query);
         }
     }
 }

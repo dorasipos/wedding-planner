@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -41,18 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandRunner.cs" />
+    <Compile Include="CommandAndQueryRunner.cs" />
     <Compile Include="Commands\CommandResult.cs" />
     <Compile Include="Commands\CreateWeddingCommand.cs" />
     <Compile Include="Commands\ExceptionCommandResult.cs" />
     <Compile Include="Commands\ImAnInteractionCommand.cs" />
     <Compile Include="Commands\SuccessfulCommandResult.cs" />
-    <Compile Include="Commands\Wedding\CreateWeddingTaskCommand.cs" />
+    <Compile Include="Commands\Weddings\CreateWeddingTaskCommand.cs" />
     <Compile Include="Interactor.cs" />
     <Compile Include="Mappers\DtoToModelMapper.cs" />
     <Compile Include="Mappers\Extensions.cs" />
+    <Compile Include="Mappers\ModelToDtoMapper.cs" />
     <Compile Include="Model\PersonDto.cs" />
+    <Compile Include="Model\WeddingDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\ImAQuery.cs" />
+    <Compile Include="Queries\Weddings\AvailableWeddingsQuery.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

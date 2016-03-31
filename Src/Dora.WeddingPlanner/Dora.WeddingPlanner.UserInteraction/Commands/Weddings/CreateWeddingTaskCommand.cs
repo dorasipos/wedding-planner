@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.Core;
 
-namespace Dora.WeddingPlanner.UserInteraction.Commands.Wedding
+namespace Dora.WeddingPlanner.UserInteraction.Commands.Weddings
 {
     public class CreateWeddingTaskCommand : ImAnInteractionCommand
     {

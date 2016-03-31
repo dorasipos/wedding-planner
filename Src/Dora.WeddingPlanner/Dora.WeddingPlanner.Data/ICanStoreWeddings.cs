@@ -12,5 +12,6 @@ namespace Dora.WeddingPlanner.Data
     {
         void Save(StorableWedding wedding);
         Wedding Load(Guid id);
+        IEnumerable<StorableWedding> All();
     }
 }

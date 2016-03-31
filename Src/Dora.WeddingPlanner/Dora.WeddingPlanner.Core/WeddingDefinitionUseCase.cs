@@ -24,5 +24,12 @@ namespace Dora.WeddingPlanner.Core
             this.weddingStore.Save(wedding);
             return new KeyValuePair<Guid, Wedding>(wedding.Id, wedding.Wedding);
         }
+
+        public IEnumerable<KeyValuePair<Guid, Wedding>> FetchAll()
+        {
+            return this.weddingStore
+                .All()
+                .Select(w => new KeyValuePair<Guid, Wedding>(w.Id, w.Wedding));
+        }
     }
 }

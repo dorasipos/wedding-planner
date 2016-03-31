@@ -12,6 +12,11 @@ namespace Dora.WeddingPlanner.Data
     {
         private readonly Dictionary<Guid, Wedding> weddingDictionary = new Dictionary<Guid, Wedding>();
 
+        public IEnumerable<StorableWedding> All()
+        {
+            return weddingDictionary.Select(w => StorableWedding.Existing(w.Key, w.Value));
+        }
+
         public Wedding Load(Guid id)
         {
             if (!weddingDictionary.ContainsKey(id))

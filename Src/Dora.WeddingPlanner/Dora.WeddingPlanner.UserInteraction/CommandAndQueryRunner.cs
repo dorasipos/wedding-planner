@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.UserInteraction.Commands;
+using Dora.WeddingPlanner.UserInteraction.Queries;
 
 namespace Dora.WeddingPlanner.UserInteraction
 {
-    internal static class CommandRunner
+    internal static class CommandAndQueryRunner
     {
         public static CommandResult Run(ImAnInteractionCommand command)
         {
@@ -18,6 +19,11 @@ namespace Dora.WeddingPlanner.UserInteraction
                 return new ExceptionCommandResult(exception);
             }
             return new SuccessfulCommandResult(result);
+        }
+
+        public static IEnumerable<T> Query<T>(ImAQuery<T> query)
+        {
+            return query.Query();
         }
 
         private static bool TryRunCommand(ImAnInteractionCommand command, out string result, out Exception exception)

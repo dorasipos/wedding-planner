@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.UserInteraction;
 using Dora.WeddingPlanner.UserInteraction.Commands;
-using Dora.WeddingPlanner.UserInteraction.Commands.Wedding;
+using Dora.WeddingPlanner.UserInteraction.Commands.Weddings;
 using Dora.WeddingPlanner.UserInteraction.Model;
 
 namespace Dora.WeddingPlanner.TestingPlayground

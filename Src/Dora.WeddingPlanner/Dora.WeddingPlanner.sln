@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.UserInt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Data", "Dora.WeddingPlanner.Data\Dora.WeddingPlanner.Data.csproj", "{F77BBDF2-E50E-4823-9B51-8A3437239D8B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{77670FCD-B107-4CE5-9969-DFEB821E94EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Web.Api", "Dora.WeddingPlanner.Web.Api\Dora.WeddingPlanner.Web.Api.csproj", "{6793F0C9-DF5D-40D3-B843-CD01F4502207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Web.Host", "Dora.WeddingPlanner.Web.Host\Dora.WeddingPlanner.Web.Host.csproj", "{A99958AE-3FC9-4813-B647-F9EA5FED255B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Web.Server", "Dora.WeddingPlanner.Web.Server\Dora.WeddingPlanner.Web.Server.csproj", "{C2992FB8-314F-4A61-91B3-AC5C3B216453}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,8 +47,25 @@ Global
 		{F77BBDF2-E50E-4823-9B51-8A3437239D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F77BBDF2-E50E-4823-9B51-8A3437239D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F77BBDF2-E50E-4823-9B51-8A3437239D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6793F0C9-DF5D-40D3-B843-CD01F4502207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6793F0C9-DF5D-40D3-B843-CD01F4502207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6793F0C9-DF5D-40D3-B843-CD01F4502207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6793F0C9-DF5D-40D3-B843-CD01F4502207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99958AE-3FC9-4813-B647-F9EA5FED255B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99958AE-3FC9-4813-B647-F9EA5FED255B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99958AE-3FC9-4813-B647-F9EA5FED255B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99958AE-3FC9-4813-B647-F9EA5FED255B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2992FB8-314F-4A61-91B3-AC5C3B216453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2992FB8-314F-4A61-91B3-AC5C3B216453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2992FB8-314F-4A61-91B3-AC5C3B216453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2992FB8-314F-4A61-91B3-AC5C3B216453}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6793F0C9-DF5D-40D3-B843-CD01F4502207} = {77670FCD-B107-4CE5-9969-DFEB821E94EB}
+		{A99958AE-3FC9-4813-B647-F9EA5FED255B} = {77670FCD-B107-4CE5-9969-DFEB821E94EB}
+		{C2992FB8-314F-4A61-91B3-AC5C3B216453} = {77670FCD-B107-4CE5-9969-DFEB821E94EB}
 	EndGlobalSection
 EndGlobal

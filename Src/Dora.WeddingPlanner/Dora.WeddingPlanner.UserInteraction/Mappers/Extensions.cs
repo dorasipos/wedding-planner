@@ -14,5 +14,10 @@ namespace Dora.WeddingPlanner.UserInteraction.Mappers
         {
             return DtoToModelMapper.Map(dto);
         }
+
+        public static WeddingDto Map(this Wedding model)
+        {
+            return ModelToDtoMapper.Map(model);
+        }
     }
 }
