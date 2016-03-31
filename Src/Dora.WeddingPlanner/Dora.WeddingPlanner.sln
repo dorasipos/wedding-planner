@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Model",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.UserInteraction", "Dora.WeddingPlanner.UserInteraction\Dora.WeddingPlanner.UserInteraction.csproj", "{58A3AA54-A317-4939-9E33-8C04CE866893}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Data", "Dora.WeddingPlanner.Data\Dora.WeddingPlanner.Data.csproj", "{F77BBDF2-E50E-4823-9B51-8A3437239D8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{58A3AA54-A317-4939-9E33-8C04CE866893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58A3AA54-A317-4939-9E33-8C04CE866893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58A3AA54-A317-4939-9E33-8C04CE866893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F77BBDF2-E50E-4823-9B51-8A3437239D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F77BBDF2-E50E-4823-9B51-8A3437239D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F77BBDF2-E50E-4823-9B51-8A3437239D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F77BBDF2-E50E-4823-9B51-8A3437239D8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

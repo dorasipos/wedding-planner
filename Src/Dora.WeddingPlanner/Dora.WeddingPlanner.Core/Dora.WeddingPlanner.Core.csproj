@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Dora.WeddingPlanner.Core</RootNamespace>
     <AssemblyName>Dora.WeddingPlanner.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,10 @@
     <Compile Include="WeddingUseCase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dora.WeddingPlanner.Data\Dora.WeddingPlanner.Data.csproj">
+      <Project>{f77bbdf2-e50e-4823-9b51-8a3437239d8b}</Project>
+      <Name>Dora.WeddingPlanner.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dora.WeddingPlanner.Model\Dora.WeddingPlanner.Model.csproj">
       <Project>{b69b1933-553d-4d55-b69b-560be88f08fa}</Project>
       <Name>Dora.WeddingPlanner.Model</Name>
