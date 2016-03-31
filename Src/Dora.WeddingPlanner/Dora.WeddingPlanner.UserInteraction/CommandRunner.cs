@@ -12,24 +12,26 @@ namespace Dora.WeddingPlanner.UserInteraction
         public static CommandResult Run(ImAnInteractionCommand command)
         {
             Exception exception;
-            if (!TryRunCommand(command, out exception))
+            string result;
+            if (!TryRunCommand(command, out result, out exception))
             {
                 return new ExceptionCommandResult(exception);
             }
-            return new SuccessfulCommandResult();
+            return new SuccessfulCommandResult(result);
         }
 
-        private static bool TryRunCommand(ImAnInteractionCommand command, out Exception exception)
+        private static bool TryRunCommand(ImAnInteractionCommand command, out string result, out Exception exception)
         {
             exception = null;
             try
             {
-                command.Execute();
+                result = command.Execute();
                 return true;
             }
             catch (Exception ex)
             {
                 exception = ex;
+                result = ex.Message;
                 return false;
             }
         }

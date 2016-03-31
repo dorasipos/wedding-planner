@@ -30,5 +30,11 @@ namespace Dora.WeddingPlanner.Model
         public IReadOnlyList<WeddingTask> Tasks { get { return this.tasks; } }
 
         public IReadOnlyList<WeddingGuest> Guests { get { return this.guests; } }
+
+        public Wedding AddTask(WeddingTask task)
+        {
+            this.tasks.Add(task);
+            return this;
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.UserInteraction;
 using Dora.WeddingPlanner.UserInteraction.Commands;
+using Dora.WeddingPlanner.UserInteraction.Commands.Wedding;
 using Dora.WeddingPlanner.UserInteraction.Model;
 
 namespace Dora.WeddingPlanner.TestingPlayground
@@ -18,6 +19,16 @@ namespace Dora.WeddingPlanner.TestingPlayground
             {
                 Bride = new PersonDto { FirstName = "Ana", LastName = "Blandiana" },
                 Groom = new PersonDto { FirstName = "David", LastName = "Morar" }
+            });
+            var id = Guid.Parse(result.Details);
+
+            Console.WriteLine(result);
+
+            result = Interactor.Run(new CreateWeddingTaskCommand
+            {
+                WeddingId = id,
+                Description = null,
+                Title = "Find a place for the Wedding reception"
             });
 
             Console.WriteLine(result);

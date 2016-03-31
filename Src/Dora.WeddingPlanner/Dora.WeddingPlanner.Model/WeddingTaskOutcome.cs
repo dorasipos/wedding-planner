@@ -8,7 +8,7 @@ namespace Dora.WeddingPlanner.Model
     public abstract class WeddingTaskOutcome
     {
         private readonly string notes;
-        private readonly List<Comment> details;
+        protected readonly List<Comment> details = new List<Comment>();
         protected readonly List<WeddingTask> relatedTasks = new List<WeddingTask>();
 
         public WeddingTaskOutcome(string takeaway)

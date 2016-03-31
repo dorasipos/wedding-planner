@@ -14,9 +14,11 @@ namespace Dora.WeddingPlanner.UserInteraction.Commands
         public PersonDto Bride { get; set; }
         public PersonDto Groom { get; set; }
 
-        public void Execute()
+        public string Execute()
         {
-            new WeddingUseCase(Interactor.Store).DefineNew(this.Bride.Map(), this.Groom.Map());
+            return new WeddingDefinitionUseCase(Interactor.Store)
+                .DefineNew(this.Bride.Map(), this.Groom.Map())
+                .Key.ToString();
         }
     }
 }

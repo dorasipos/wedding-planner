@@ -9,6 +9,7 @@ namespace Dora.WeddingPlanner.Model
     public abstract class WeddingTask
     {
         private WeddingTaskOutcome outcome = new NoOutcome();
+        protected readonly List<Comment> details = new List<Comment>();
 
         public WeddingTask(string title)
         {
@@ -22,7 +23,13 @@ namespace Dora.WeddingPlanner.Model
 
         public string Title { get; }
 
-        public string Description { get; private set; }
+        public IReadOnlyList<Comment> Details { get; private set; }
+
+        public virtual WeddingTask Describe(string description)
+        {
+            this.details.Add(new Comment(description));
+            return this;
+        }
 
         public WeddingTaskOutcome Outcome
         {

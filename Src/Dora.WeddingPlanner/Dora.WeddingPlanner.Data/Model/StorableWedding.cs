@@ -27,7 +27,7 @@ namespace Dora.WeddingPlanner.Data.Model
             return new StorableWedding(wedding);
         }
 
-        public static StorableWedding Exisitng(Guid id, Wedding wedding)
+        public static StorableWedding Existing(Guid id, Wedding wedding)
         {
             return new StorableWedding(wedding, id);
         }

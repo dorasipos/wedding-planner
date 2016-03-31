@@ -14,12 +14,21 @@ namespace Dora.WeddingPlanner.Data
 
         public Wedding Load(Guid id)
         {
+            if (!weddingDictionary.ContainsKey(id))
+            {
+                return null;
+            }
             return weddingDictionary[id];
         }
 
         public void Save(StorableWedding wedding)
         {
-            weddingDictionary.Add(wedding.Id, wedding.Wedding);
+            if (!weddingDictionary.ContainsKey(wedding.Id))
+            {
+                weddingDictionary.Add(wedding.Id, wedding.Wedding);
+                return;
+            }
+            weddingDictionary[wedding.Id] = wedding.Wedding;
         }
     }
 }

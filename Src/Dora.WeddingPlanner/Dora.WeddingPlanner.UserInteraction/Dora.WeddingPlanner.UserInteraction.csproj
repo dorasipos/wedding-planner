@@ -47,6 +47,7 @@
     <Compile Include="Commands\ExceptionCommandResult.cs" />
     <Compile Include="Commands\ImAnInteractionCommand.cs" />
     <Compile Include="Commands\SuccessfulCommandResult.cs" />
+    <Compile Include="Commands\Wedding\CreateWeddingTaskCommand.cs" />
     <Compile Include="Interactor.cs" />
     <Compile Include="Mappers\DtoToModelMapper.cs" />
     <Compile Include="Mappers\Extensions.cs" />

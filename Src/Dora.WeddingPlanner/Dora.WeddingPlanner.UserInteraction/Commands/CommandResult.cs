@@ -16,10 +16,10 @@ namespace Dora.WeddingPlanner.UserInteraction.Commands
         {
             if (this.IsSuccessful)
             {
-                return "SUCCESSFULLY executed interaction command";
+                return string.Format("SUCCESSFULLY executed interaction command{0}Details:{0}{1}{0}", Environment.NewLine, this.Details ?? "[Nothing]");
             }
 
-            return string.Format("ERROR executing interaction command{0}{0}Details:{0}{1}", Environment.NewLine, this.Details);
+            return string.Format("ERROR executing interaction command{0}{0}Details:{0}{1}{0}", Environment.NewLine, this.Details ?? "[Nothing]");
         }
     }
 }
