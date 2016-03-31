@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.UserInteraction;
+using Dora.WeddingPlanner.UserInteraction.Commands;
 using Dora.WeddingPlanner.UserInteraction.Queries.Weddings;
 using Nancy;
+using Nancy.ModelBinding;
 
 namespace Dora.WeddingPlanner.Web.Api
 {
@@ -17,6 +19,12 @@ namespace Dora.WeddingPlanner.Web.Api
             Get["/"] = p =>
             {
                 return Response.AsJson(Interactor.Query(new AvailableWeddingsQuery()).ToArray());
+            };
+
+            Post["/"] = _ =>
+            {
+                var result = Interactor.Run(this.Bind<CreateWeddingCommand>());
+                return Response.AsJson(result).WithStatusCode(result.StatusCode());
             };
         }
     }
