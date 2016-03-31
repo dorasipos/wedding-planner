@@ -27,7 +27,7 @@ namespace Dora.WeddingPlanner.TestingPlayground
             result = Interactor.Run(new CreateWeddingTaskCommand
             {
                 WeddingId = id,
-                Description = null,
+                Description = "Scout for a place regarding the wedding reception",
                 Title = "Find a place for the Wedding reception"
             });
 
