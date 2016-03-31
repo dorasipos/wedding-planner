@@ -16,7 +16,7 @@ namespace Dora.WeddingPlanner.UserInteraction.Commands
 
         public void Execute()
         {
-            new WeddingUseCase().DefineNew(this.Bride.Map(), this.Groom.Map());
+            new WeddingUseCase(Interactor.Store).DefineNew(this.Bride.Map(), this.Groom.Map());
         }
     }
 }

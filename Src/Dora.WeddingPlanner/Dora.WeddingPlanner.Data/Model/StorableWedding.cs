@@ -15,7 +15,9 @@ namespace Dora.WeddingPlanner.Data.Model
             this.Id = id;
         }
 
-        private StorableWedding(Wedding wedding) : this(wedding, Guid.Empty) { }
+        private StorableWedding(Wedding wedding)
+            : this(wedding, Guid.NewGuid())
+        { }
 
         public Guid Id { get; }
         public Wedding Wedding { get; }

@@ -15,7 +15,7 @@ namespace Dora.WeddingPlanner.Model
             this.FirstName = firstName;
             this.LastName = lastName;
 
-            this.displayName = string.Format("{0} {2}", this.LastName, this.FirstName).Trim();
+            this.displayName = string.Format("{0} {1}", this.LastName, this.FirstName).Trim();
         }
 
         public string FirstName { get; }

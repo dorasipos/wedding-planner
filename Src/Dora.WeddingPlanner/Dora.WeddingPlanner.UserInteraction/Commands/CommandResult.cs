@@ -11,5 +11,15 @@ namespace Dora.WeddingPlanner.UserInteraction.Commands
         public abstract bool IsSuccessful { get; }
 
         public virtual string Details { get; protected set; }
+
+        public override string ToString()
+        {
+            if (this.IsSuccessful)
+            {
+                return "SUCCESSFULLY executed interaction command";
+            }
+
+            return string.Format("ERROR executing interaction command{0}{0}Details:{0}{1}", Environment.NewLine, this.Details);
+        }
     }
 }

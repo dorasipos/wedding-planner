@@ -49,13 +49,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dora.WeddingPlanner.Core\Dora.WeddingPlanner.Core.csproj">
-      <Project>{d6cc927d-b2ab-4686-be11-05b0b137eeea}</Project>
-      <Name>Dora.WeddingPlanner.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Dora.WeddingPlanner.Model\Dora.WeddingPlanner.Model.csproj">
-      <Project>{b69b1933-553d-4d55-b69b-560be88f08fa}</Project>
-      <Name>Dora.WeddingPlanner.Model</Name>
+    <ProjectReference Include="..\Dora.WeddingPlanner.UserInteraction\Dora.WeddingPlanner.UserInteraction.csproj">
+      <Project>{58a3aa54-a317-4939-9e33-8c04ce866893}</Project>
+      <Name>Dora.WeddingPlanner.UserInteraction</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

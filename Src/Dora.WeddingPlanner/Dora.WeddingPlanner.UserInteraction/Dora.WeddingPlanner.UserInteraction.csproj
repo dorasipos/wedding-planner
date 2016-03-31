@@ -47,6 +47,7 @@
     <Compile Include="Commands\ExceptionCommandResult.cs" />
     <Compile Include="Commands\ImAnInteractionCommand.cs" />
     <Compile Include="Commands\SuccessfulCommandResult.cs" />
+    <Compile Include="Interactor.cs" />
     <Compile Include="Mappers\DtoToModelMapper.cs" />
     <Compile Include="Mappers\Extensions.cs" />
     <Compile Include="Model\PersonDto.cs" />
@@ -57,6 +58,10 @@
     <ProjectReference Include="..\Dora.WeddingPlanner.Core\Dora.WeddingPlanner.Core.csproj">
       <Project>{d6cc927d-b2ab-4686-be11-05b0b137eeea}</Project>
       <Name>Dora.WeddingPlanner.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dora.WeddingPlanner.Data\Dora.WeddingPlanner.Data.csproj">
+      <Project>{f77bbdf2-e50e-4823-9b51-8a3437239d8b}</Project>
+      <Name>Dora.WeddingPlanner.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dora.WeddingPlanner.Model\Dora.WeddingPlanner.Model.csproj">
       <Project>{b69b1933-553d-4d55-b69b-560be88f08fa}</Project>
