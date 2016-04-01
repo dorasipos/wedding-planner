@@ -1,7 +1,7 @@
 ﻿(function (ng) {
     'use strict';
 
-    ng.module('WeddingPlannerApp', ['ng', 'ngRoute', 'ngMaterial', 'wedding-definition'])
+    ng.module('WeddingPlannerApp', ['ng', 'ngRoute', 'ngMaterial', 'wedding-definition', 'wedding'])
     .config(['$mdThemingProvider', '$routeProvider', '$locationProvider', function ($mdThemingProvider, $route, $location) {
         $mdThemingProvider.theme('default');
 

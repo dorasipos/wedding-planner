@@ -7,7 +7,7 @@
     }
 
     ng.module('wedding-definition')
-    .controller('newWedding', ['$scope', '$http', '$mdToast', function ($s, $http, $toast) {
+    .controller('newWedding', ['$scope', '$http', '$location', '$mdToast', function ($s, $http, $l, $toast) {
 
         $s.bride = new Person();
         $s.groom = new Person();
@@ -18,20 +18,25 @@
                 bride: $s.bride,
                 groom: $s.groom
             })
-            .success(function () {
-                $toast.show(
-                    $toast.simple()
-                        .textContent('Successfully created a new wedding!')
-                        .position('top right')
-                        .hideDelay(5000)
-                    );
+            .success(function (response) {
+                $toast
+                    .show(
+                        $toast.simple()
+                            .textContent('Successfully created a new wedding, taking U there in a bit...')
+                            .position('bottom right')
+                            .hideDelay(2000)
+                    )
+                    .then(function () {
+                        $l.path('/' + response.details);
+                    });
             })
             .error(function () {
-                $toast.show(
-                    $toast.simple()
-                        .textContent('Error creating a new wedding')
-                        .position('top right')
-                        .hideDelay(5000)
+                $toast
+                    .show(
+                        $toast.simple()
+                            .textContent('Error creating a new wedding')
+                            .position('bottom right')
+                            .hideDelay(5000)
                     );
             })
             .finally(function () {
