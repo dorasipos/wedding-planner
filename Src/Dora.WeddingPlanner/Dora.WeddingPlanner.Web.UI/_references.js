@@ -6,4 +6,6 @@
 /// <reference path="bower_components/angular-material/angular-material.js" />
 
 
+/// <reference path="app/wedding-definition/module.js" />
+
 /// <reference path="app/WeddingPlannerApp.js" />

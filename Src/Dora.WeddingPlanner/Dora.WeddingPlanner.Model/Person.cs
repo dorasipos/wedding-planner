@@ -12,6 +12,11 @@ namespace Dora.WeddingPlanner.Model
 
         public Person(string firstName, string lastName)
         {
+            if (string.IsNullOrWhiteSpace(firstName) && string.IsNullOrWhiteSpace(lastName))
+            {
+                throw new InvalidOperationException("A person must have a name");
+            }
+
             this.FirstName = firstName;
             this.LastName = lastName;
 

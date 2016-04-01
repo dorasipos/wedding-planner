@@ -8,11 +8,11 @@
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>First name</label>
-                        <input />
+                        <input ng-model="bride.firstName" />
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Last Name</label>
-                        <input />
+                        <input ng-model="bride.lastName"/>
                     </md-input-container>
                 </div>
 
@@ -22,16 +22,22 @@
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>First name</label>
-                        <input />
+                        <input ng-model="groom.firstName" />
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Last Name</label>
-                        <input />
+                        <input ng-model="groom.lastName" />
                     </md-input-container>
                 </div>
-
+                
                 <div layout-gt-sm="column">
-                    <md-button class="md-raised md-primary">OK, Create</md-button>
+                    <md-button class="md-raised md-primary" ng-click="submit()" ng-disabled="submit.ing">
+                        <span ng-hide="submit.ing">OK, Create</span>
+                        <span ng-show="submit.ing">
+                            <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+                            Creating...
+                        </span>
+                    </md-button>
                 </div>
             </form>
         </div>
