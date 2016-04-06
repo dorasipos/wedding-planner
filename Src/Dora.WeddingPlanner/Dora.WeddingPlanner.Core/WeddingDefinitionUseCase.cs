@@ -31,5 +31,15 @@ namespace Dora.WeddingPlanner.Core
                 .All()
                 .Select(w => new KeyValuePair<Guid, Wedding>(w.Id, w.Wedding));
         }
+
+        public Wedding Load(Guid weddingId)
+        {
+            var wedding = this.weddingStore.Load(weddingId);
+            if (wedding == null)
+            {
+                throw new InvalidOperationException("This wedding does not exist");
+            }
+            return wedding;
+        }
     }
 }

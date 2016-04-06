@@ -21,9 +21,9 @@ namespace Dora.WeddingPlanner.UserInteraction
             return new SuccessfulCommandResult(result);
         }
 
-        public static IEnumerable<T> Query<T>(ImAQuery<T> query)
+        public static TResult Query<TResult, TParameter>(ImAQuery<TResult, TParameter> query, TParameter parameter)
         {
-            return query.Query();
+            return query.Query(parameter);
         }
 
         private static bool TryRunCommand(ImAnInteractionCommand command, out string result, out Exception exception)

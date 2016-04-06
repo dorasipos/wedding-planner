@@ -9,9 +9,9 @@ using Dora.WeddingPlanner.UserInteraction.Model;
 
 namespace Dora.WeddingPlanner.UserInteraction.Queries.Weddings
 {
-    public class AvailableWeddingsQuery : ImAQuery<KeyValuePair<Guid, WeddingDto>>
+    public class AvailableWeddingsQuery : ImAQuery<IEnumerable<KeyValuePair<Guid, WeddingDto>>, object>
     {
-        public IEnumerable<KeyValuePair<Guid, WeddingDto>> Query()
+        public IEnumerable<KeyValuePair<Guid, WeddingDto>> Query(object parameter)
         {
             return new WeddingDefinitionUseCase(Interactor.Store)
                 .FetchAll()

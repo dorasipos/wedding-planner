@@ -50,11 +50,11 @@ namespace Dora.WeddingPlanner.UserInteraction
             return CommandAndQueryRunner.Run(command);
         }
 
-        public static IEnumerable<T> Query<T>(ImAQuery<T> query)
+        public static TResult Query<TResult, TParameter>(ImAQuery<TResult, TParameter> query, TParameter parameter)
         {
             EnsureInitialization();
 
-            return CommandAndQueryRunner.Query(query);
+            return CommandAndQueryRunner.Query(query, parameter);
         }
     }
 }

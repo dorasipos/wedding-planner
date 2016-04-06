@@ -18,7 +18,7 @@ namespace Dora.WeddingPlanner.Web.Api
         {
             Get["/"] = p =>
             {
-                return Response.AsJson(Interactor.Query(new AvailableWeddingsQuery()).ToArray());
+                return Response.AsJson(Interactor.Query(new AvailableWeddingsQuery(), null).ToArray());
             };
 
             Post["/"] = _ =>

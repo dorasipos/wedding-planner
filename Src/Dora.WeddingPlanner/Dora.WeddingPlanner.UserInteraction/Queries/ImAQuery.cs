@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dora.WeddingPlanner.UserInteraction.Queries
 {
-    public interface ImAQuery<T>
+    public interface ImAQuery<TResult, TParameter>
     {
-        IEnumerable<T> Query();
+        TResult Query(TParameter parameter);
     }
 }
