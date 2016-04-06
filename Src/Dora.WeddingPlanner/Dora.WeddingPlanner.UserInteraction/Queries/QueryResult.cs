@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dora.WeddingPlanner.UserInteraction.Commands
+namespace Dora.WeddingPlanner.UserInteraction.Queries
 {
-    public abstract class CommandResult<TResult>
+    public abstract class QueryResult<TResult>
     {
         public abstract bool IsSuccessful { get; }
 
@@ -18,10 +18,10 @@ namespace Dora.WeddingPlanner.UserInteraction.Commands
         {
             if (this.IsSuccessful)
             {
-                return string.Format("SUCCESSFULLY executed interaction command{0}Details:{0}{1}{0}", Environment.NewLine, this.Details ?? "[Nothing]");
+                return string.Format("SUCCESSFULLY executed query{0}Result:{0}{1}{0}", Environment.NewLine, this.Details ?? "[Nothing]");
             }
 
-            return string.Format("ERROR executing interaction command{0}{0}Details:{0}{1}{0}", Environment.NewLine, this.Details ?? "[Nothing]");
+            return string.Format("ERROR executing query{0}{0}Result:{0}{1}{0}", Environment.NewLine, this.Details ?? "[Nothing]");
         }
     }
 }

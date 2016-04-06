@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dora.WeddingPlanner.UserInteraction.Commands
+namespace Dora.WeddingPlanner.UserInteraction.Queries
 {
-    public class ExceptionCommandResult<TResult> : CommandResult<TResult>
+    public class ExceptionQueryResult<TResult> : QueryResult<TResult>
     {
         private readonly Exception exception;
 
-        public ExceptionCommandResult(Exception ex)
+        public ExceptionQueryResult(Exception ex)
         {
             this.exception = ex;
             this.Details = string.Format("{0}{1}{1}Stack Trace:{1}==========={1}{2}", this.exception.Message, Environment.NewLine, this.exception.StackTrace);

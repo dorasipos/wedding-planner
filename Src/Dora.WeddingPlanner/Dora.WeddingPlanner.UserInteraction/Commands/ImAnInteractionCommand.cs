@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dora.WeddingPlanner.UserInteraction.Commands
 {
-    public interface ImAnInteractionCommand
+    public interface ImAnInteractionCommand<TResult>
     {
-        string Execute();
+        TResult Execute();
     }
 }

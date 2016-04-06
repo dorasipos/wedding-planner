@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Dora.WeddingPlanner.UserInteraction.Queries;
+using Nancy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Dora.WeddingPlanner.UserInteraction.Commands;
-using Nancy;
 
 namespace Dora.WeddingPlanner.Web.Api
 {
-    internal static class CommandStatusCode
+    internal static class QueryStatusCode
     {
-        public static HttpStatusCode StatusCode<TResult>(this CommandResult<TResult> result)
+        public static HttpStatusCode StatusCode<TResult>(this QueryResult<TResult> result)
         {
             if (result.IsSuccessful)
             {

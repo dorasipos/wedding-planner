@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dora.WeddingPlanner.UserInteraction.Commands
+namespace Dora.WeddingPlanner.UserInteraction.Queries
 {
-    public class SuccessfulCommandResult<TResult> : CommandResult<TResult>
+    public class SuccessfulQueryResult<TResult> : QueryResult<TResult>
     {
-        private SuccessfulCommandResult()
+        private SuccessfulQueryResult()
             : base()
         { }
 
-        public SuccessfulCommandResult(TResult result)
+        public SuccessfulQueryResult(TResult result)
             : base()
         {
             this.Result = result;

@@ -13,9 +13,12 @@ namespace Dora.WeddingPlanner.UserInteraction.Queries.Weddings
     {
         public IEnumerable<KeyValuePair<Guid, WeddingDto>> Query(object parameter)
         {
-            return new WeddingDefinitionUseCase(Interactor.Store)
+            foreach (var w in new WeddingDefinitionUseCase(Interactor.Store)
                 .FetchAll()
-                .Select(w => new KeyValuePair<Guid, WeddingDto>(w.Key, w.Value.Map()));
+                .Select(w => new KeyValuePair<Guid, WeddingDto>(w.Key, w.Value.Map())))
+            {
+                yield return w;
+            }
         }
     }
 }

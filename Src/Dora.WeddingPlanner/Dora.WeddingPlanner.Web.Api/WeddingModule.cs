@@ -18,7 +18,14 @@ namespace Dora.WeddingPlanner.Web.Api
         {
             Get["/"] = p =>
             {
-                return Response.AsJson(Interactor.Query(new AvailableWeddingsQuery(), null).ToArray());
+                var result = Interactor.Query(new AvailableWeddingsQuery(), null);
+                return Response.AsJson(result).WithStatusCode(result.StatusCode());
+            };
+
+            Get["/{WeddingId}"] = p =>
+            {
+                var result = Interactor.Query(new LoadWeddingQuery(), (Guid)p.WeddingId);
+                return Response.AsJson(result).WithStatusCode(result.StatusCode());
             };
 
             Post["/"] = _ =>

@@ -43,14 +43,14 @@ namespace Dora.WeddingPlanner.UserInteraction
             }
         }
 
-        public static CommandResult Run(ImAnInteractionCommand command)
+        public static CommandResult<TResult> Run<TResult>(ImAnInteractionCommand<TResult> command)
         {
             EnsureInitialization();
 
             return CommandAndQueryRunner.Run(command);
         }
 
-        public static TResult Query<TResult, TParameter>(ImAQuery<TResult, TParameter> query, TParameter parameter)
+        public static QueryResult<TResult> Query<TResult, TParameter>(ImAQuery<TResult, TParameter> query, TParameter parameter)
         {
             EnsureInitialization();
 
