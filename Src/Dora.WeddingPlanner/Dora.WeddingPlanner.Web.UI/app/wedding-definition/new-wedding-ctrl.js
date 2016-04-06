@@ -27,7 +27,7 @@
                             .hideDelay(2000)
                     )
                     .then(function () {
-                        $l.path('/' + response.details);
+                        $l.path('/' + response.result);
                     });
             })
             .error(function () {
