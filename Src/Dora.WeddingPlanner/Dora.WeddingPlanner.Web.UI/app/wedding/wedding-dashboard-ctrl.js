@@ -4,23 +4,9 @@
     ng.module('wedding')
     .controller('weddingDashboard', ['$scope', '$routeParams', '$http', '$location', '$mdToast', function ($s, $p, $http, $l, $toast) {
 
-        $toast
-            .show(
-                $toast.simple()
-                    .textContent('Loading wedding...')
-                    .position('bottom right')
-                    .hideDelay(2000)
-                );
-
         $http.get('../wedding/' + $p.weddingId)
         .success(function (weddingDto) {
-            $toast
-                .show(
-                    $toast.simple()
-                        .textContent('Wedding loaded')
-                        .position('bottom right')
-                        .hideDelay(2000)
-                    );
+            $s.wedding = weddingDto;
         })
         .error(function () {
             $toast
