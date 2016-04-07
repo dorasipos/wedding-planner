@@ -52,8 +52,10 @@
     <Compile Include="Mappers\DtoToModelMapper.cs" />
     <Compile Include="Mappers\Extensions.cs" />
     <Compile Include="Mappers\ModelToDtoMapper.cs" />
+    <Compile Include="Model\CommentDto.cs" />
     <Compile Include="Model\PersonDto.cs" />
     <Compile Include="Model\WeddingDto.cs" />
+    <Compile Include="Model\WeddingTaskDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\ExceptionQueryResult.cs" />
     <Compile Include="Queries\ImAQuery.cs" />

@@ -4,6 +4,7 @@
     ng.module('wedding')
     .controller('weddingDashboard', ['$scope', '$routeParams', '$http', '$location', '$mdToast', function ($s, $p, $http, $l, $toast) {
 
+
         $http.get('../wedding/' + $p.weddingId)
         .success(function (weddingDto) {
             $s.wedding = weddingDto;

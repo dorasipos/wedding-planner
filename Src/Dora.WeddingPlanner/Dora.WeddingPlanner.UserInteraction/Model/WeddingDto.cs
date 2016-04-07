@@ -10,5 +10,7 @@ namespace Dora.WeddingPlanner.UserInteraction.Model
     {
         public PersonDto Bride { get; set; }
         public PersonDto Groom { get; set; }
+
+        public IReadOnlyList<WeddingTaskDto> Tasks { get; set; }
     }
 }
