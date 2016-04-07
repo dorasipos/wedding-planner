@@ -8,5 +8,6 @@
 /// <reference path="app/wedding-definition/module.js" />
 
 /// <reference path="app/wedding/module.js" />
+/// <reference path="app/wedding/wedding-svc.js" />
 
 /// <reference path="app/WeddingPlannerApp.js" />

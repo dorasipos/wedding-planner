@@ -2,25 +2,24 @@
     'use strict';
 
     ng.module('wedding')
-    .controller('weddingDashboard', ['$scope', '$routeParams', '$http', '$location', '$mdToast', function ($s, $p, $http, $l, $toast) {
+    .controller('weddingDashboard', ['$scope', '$location', '$mdToast', 'wedding', function ($s, $l, $toast, wedding) {
 
-
-        $http.get('../wedding/' + $p.weddingId)
-        .success(function (weddingDto) {
-            $s.wedding = weddingDto;
-        })
-        .error(function () {
-            $toast
-                .show(
-                    $toast.simple()
-                        .textContent('Error loading wedding, taking you home in a bit...')
-                        .position('bottom right')
-                        .hideDelay(3000)
-                    )
-                .then(function () {
-                    $l.path('/');
-                });
-        });
+        wedding
+            .current()
+            .then(function (wedding) {
+                $s.wedding = wedding;
+            }, function () {
+                $toast
+                    .show(
+                        $toast.simple()
+                            .textContent('Error loading wedding, taking you home in a bit...')
+                            .position('bottom right')
+                            .hideDelay(3000)
+                        )
+                    .then(function () {
+                        $l.path('/');
+                    });
+            });
 
     }]);
 
