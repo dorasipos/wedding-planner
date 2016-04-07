@@ -1,4 +1,4 @@
 ﻿<div>
     <md-progress-linear md-mode="indeterminate" ng-hide="wedding"></md-progress-linear>
-    Wedding dashboard
+    <div ng-hide="wedding.tasks" ng-include="'app/wedding/views/wedding-task-suggestions.tmpl.html'"></div>
 </div>
