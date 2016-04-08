@@ -2,7 +2,7 @@
     'use strict';
 
     ng.module('wedding-task')
-    .controller('newWeddingTask', ['$scope', '$mdDialog', function ($s, $mdDialog) {
+    .controller('newWeddingTask', ['$scope', '$location', '$mdDialog', 'wedding', function ($s, $l, $mdDialog, w) {
 
         $s.title = null;
         $s.description = null;
@@ -50,9 +50,7 @@
                 .cancel('Nope, sorry!');
 
             $mdDialog.show(confirm).then(function () {
-                console.log('Yup, cancel task');
-            }, function () {
-                console.log('No, no, get back to task editing');
+                $l.path('/' + w.id());
             });
         };
 
