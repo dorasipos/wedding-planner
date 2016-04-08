@@ -1,7 +1,7 @@
 ﻿(function (ng) {
     'use strict';
 
-    ng.module('wedding', ['ng', 'ngMaterial', 'ngRoute'])
+    ng.module('wedding', ['ng', 'ngMaterial', 'ngRoute', 'wedding-task'])
     .config(['$routeProvider', function ($route) {
 
         $route

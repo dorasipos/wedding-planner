@@ -21,6 +21,10 @@
                     });
             });
 
+        $s.goTo = function (path) {
+            $l.path(path);
+        };
+
     }]);
 
 })(this.angular);
