@@ -4,9 +4,10 @@
     ng.module('wedding')
     .service('wedding', ['$routeParams', '$http', '$q', function ($p, $http, $q) {
 
-        var wedding = null;
+        var weddingId = $p.weddingId,
+            wedding = null;
 
-        this.id = function () { return $p.weddingId; }
+        this.id = function () { return weddingId; }
 
         this.current = function () {
             var deff = $q.defer();
