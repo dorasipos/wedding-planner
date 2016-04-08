@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58A3AA54-A317-4939-9E33-8C04CE866893}</ProjectGuid>
+    <ProjectGuid>{7CB68866-F715-44ED-AAF1-DFF47730832A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dora.WeddingPlanner.UserInteraction</RootNamespace>
-    <AssemblyName>Dora.WeddingPlanner.UserInteraction</AssemblyName>
+    <RootNamespace>Dora.WeddingPlanner.Data.Repository.NDatabase</RootNamespace>
+    <AssemblyName>Dora.WeddingPlanner.Data.Repository.NDatabase</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,13 +25,18 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NDatabase3, Version=3.8.0.13, Culture=neutral, PublicKeyToken=31d8e3cda240c056, processorArchitecture=MSIL">
+      <HintPath>..\packages\NDatabase.3.8.0\lib\net45\NDatabase3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,39 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandAndQueryRunner.cs" />
-    <Compile Include="Commands\CommandResult.cs" />
-    <Compile Include="Commands\CreateWeddingCommand.cs" />
-    <Compile Include="Commands\ExceptionCommandResult.cs" />
-    <Compile Include="Commands\ImAnInteractionCommand.cs" />
-    <Compile Include="Commands\SuccessfulCommandResult.cs" />
-    <Compile Include="Commands\Weddings\CreateWeddingTaskCommand.cs" />
-    <Compile Include="Interactor.cs" />
-    <Compile Include="Mappers\DtoToModelMapper.cs" />
-    <Compile Include="Mappers\Extensions.cs" />
-    <Compile Include="Mappers\ModelToDtoMapper.cs" />
-    <Compile Include="Model\CommentDto.cs" />
-    <Compile Include="Model\PersonDto.cs" />
-    <Compile Include="Model\WeddingDto.cs" />
-    <Compile Include="Model\WeddingTaskDto.cs" />
+    <Compile Include="NDatabaseWeddingStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\ExceptionQueryResult.cs" />
-    <Compile Include="Queries\ImAQuery.cs" />
-    <Compile Include="Queries\QueryResult.cs" />
-    <Compile Include="Queries\SuccessfulQueryResult.cs" />
-    <Compile Include="Queries\Weddings\AvailableWeddingsQuery.cs" />
-    <Compile Include="Queries\Weddings\LoadWeddingQuery.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Dora.WeddingPlanner.Core\Dora.WeddingPlanner.Core.csproj">
-      <Project>{d6cc927d-b2ab-4686-be11-05b0b137eeea}</Project>
-      <Name>Dora.WeddingPlanner.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Dora.WeddingPlanner.Data.Repository.NDatabase\Dora.WeddingPlanner.Data.Repository.NDatabase.csproj">
-      <Project>{7cb68866-f715-44ed-aaf1-dff47730832a}</Project>
-      <Name>Dora.WeddingPlanner.Data.Repository.NDatabase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Dora.WeddingPlanner.Data\Dora.WeddingPlanner.Data.csproj">
       <Project>{f77bbdf2-e50e-4823-9b51-8a3437239d8b}</Project>
       <Name>Dora.WeddingPlanner.Data</Name>
@@ -82,6 +58,9 @@
       <Project>{b69b1933-553d-4d55-b69b-560be88f08fa}</Project>
       <Name>Dora.WeddingPlanner.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
