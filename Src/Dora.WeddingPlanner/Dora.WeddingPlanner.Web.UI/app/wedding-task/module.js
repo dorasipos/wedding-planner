@@ -5,7 +5,7 @@
     .config(['$routeProvider', function ($route) {
 
         $route
-            .when('/task/new', { templateUrl: 'app/wedding-task/views/new-wedding-task.tmpl.html' });
+            .when('/task/new', { templateUrl: 'app/wedding-task/views/new-wedding-task.tmpl.html', controller: 'newWeddingTask' });
 
     }]);
 

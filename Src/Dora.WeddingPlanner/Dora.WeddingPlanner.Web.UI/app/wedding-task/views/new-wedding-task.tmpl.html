@@ -1,3 +1,38 @@
 ﻿<div>
-    New wedding task
+    <md-subheader class="md-primary">New Wedding Task</md-subheader>
+
+    <md-content layout-padding>
+        <div>
+            <form name="weddingTaskForm">
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Title</label>
+                        <input />
+                    </md-input-container>
+                </div>
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Description</label>
+                        <textarea rows="10"></textarea>
+                    </md-input-container>
+                </div>
+                <div layout-gt-xs="row">
+                    <md-switch class="md-primary" md-no-ink aria-label="Is this task mandatory?" ng-model="isMandatory">
+                        Is this task mandatory? (<span ng-show="isMandatory">Yes</span><span ng-hide="isMandatory">No</span>)
+                    </md-switch>
+                </div>
+                <div layout-gt-sm="column">
+                    <md-button class="md-raised md-primary" ng-click="submit()" ng-disabled="submit.ing">
+                        <span ng-hide="submit.ing">OK, Create</span>
+                        <span ng-show="submit.ing">
+                            <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+                            Creating...
+                        </span>
+                    </md-button>
+
+                    <md-button ng-click="cancel($event)">Cancel, nevermind...</md-button>
+                </div>
+            </form>
+        </div>
+    </md-content>
 </div>
