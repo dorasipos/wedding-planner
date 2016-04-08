@@ -11,6 +11,12 @@
 
         this.current = function () {
             var deff = $q.defer();
+
+            if ($p.weddingId !== weddingId) {
+                weddingId = $p.weddingId;
+                wedding = null;
+            }
+
             if (wedding) {
                 deff.resolve(wedding);
             }
