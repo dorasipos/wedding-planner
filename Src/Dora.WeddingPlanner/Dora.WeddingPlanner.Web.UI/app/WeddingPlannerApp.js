@@ -8,7 +8,7 @@
         $location.html5Mode(false);
 
         $route
-            .otherwise({ redirectTo: '/new' });
+            .otherwise({ redirectTo: '/browse' });
 
     }]);
 
