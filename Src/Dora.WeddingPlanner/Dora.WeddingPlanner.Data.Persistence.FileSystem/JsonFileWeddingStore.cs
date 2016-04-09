@@ -29,7 +29,7 @@ namespace Dora.WeddingPlanner.Data.Persistence.FileSystem
             throw new NotImplementedException();
         }
 
-        public Wedding Load(Guid id)
+        public Wedding Load(string id)
         {
             var filePath = string.Format(@"{0}\{1}.data.json", WeddingFolder(id), id);
             if (!File.Exists(filePath))
@@ -58,7 +58,7 @@ namespace Dora.WeddingPlanner.Data.Persistence.FileSystem
             };
         }
 
-        private string EnsureWeddingFolderFor(Guid id)
+        private string EnsureWeddingFolderFor(string id)
         {
             var weddingFolderPath = WeddingFolder(id);
             if (!Directory.Exists(weddingFolderPath))
@@ -68,7 +68,7 @@ namespace Dora.WeddingPlanner.Data.Persistence.FileSystem
             return weddingFolderPath;
         }
 
-        private string WeddingFolder(Guid id)
+        private string WeddingFolder(string id)
         {
             return string.Format(@"{0}\{1}", this.storageBasePath, id);
         }

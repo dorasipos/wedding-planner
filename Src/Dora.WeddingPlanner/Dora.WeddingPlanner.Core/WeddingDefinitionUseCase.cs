@@ -18,21 +18,21 @@ namespace Dora.WeddingPlanner.Core
             this.weddingStore = store;
         }
 
-        public KeyValuePair<Guid, Wedding> DefineNew(Person bride, Person groom)
+        public KeyValuePair<string, Wedding> DefineNew(Person bride, Person groom)
         {
             var wedding = StorableWedding.New(new Wedding(bride, groom));
             this.weddingStore.Save(wedding);
-            return new KeyValuePair<Guid, Wedding>(wedding.Id, wedding.Wedding);
+            return new KeyValuePair<string, Wedding>(wedding.Id, wedding.Wedding);
         }
 
-        public IEnumerable<KeyValuePair<Guid, Wedding>> FetchAll()
+        public IEnumerable<KeyValuePair<string, Wedding>> FetchAll()
         {
             return this.weddingStore
                 .All()
-                .Select(w => new KeyValuePair<Guid, Wedding>(w.Id, w.Wedding));
+                .Select(w => new KeyValuePair<string, Wedding>(w.Id, w.Wedding));
         }
 
-        public Wedding Load(Guid weddingId)
+        public Wedding Load(string weddingId)
         {
             var wedding = this.weddingStore.Load(weddingId);
             if (wedding == null)

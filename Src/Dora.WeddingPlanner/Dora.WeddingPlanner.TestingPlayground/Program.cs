@@ -20,7 +20,7 @@ namespace Dora.WeddingPlanner.TestingPlayground
                 Bride = new PersonDto { FirstName = "Ana", LastName = "Blandiana" },
                 Groom = new PersonDto { FirstName = "David", LastName = "Morar" }
             });
-            var id = Guid.Parse(result.Details);
+            var id = result.Details;
 
             Console.WriteLine(result);
 

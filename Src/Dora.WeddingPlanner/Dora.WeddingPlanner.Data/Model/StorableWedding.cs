@@ -9,17 +9,17 @@ namespace Dora.WeddingPlanner.Data.Model
 {
     public class StorableWedding
     {
-        private StorableWedding(Wedding wedding, Guid id)
+        private StorableWedding(Wedding wedding, string id)
         {
             this.Wedding = wedding;
             this.Id = id;
         }
 
         private StorableWedding(Wedding wedding)
-            : this(wedding, Guid.NewGuid())
+            : this(wedding, Guid.NewGuid().ToString())
         { }
 
-        public Guid Id { get; private set; }
+        public string Id { get; private set; }
         public Wedding Wedding { get; private set; }
 
         public static StorableWedding New(Wedding wedding)
@@ -27,7 +27,7 @@ namespace Dora.WeddingPlanner.Data.Model
             return new StorableWedding(wedding);
         }
 
-        public static StorableWedding Existing(Guid id, Wedding wedding)
+        public static StorableWedding Existing(string id, Wedding wedding)
         {
             return new StorableWedding(wedding, id);
         }

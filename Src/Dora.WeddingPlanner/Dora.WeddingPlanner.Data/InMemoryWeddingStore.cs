@@ -10,14 +10,14 @@ namespace Dora.WeddingPlanner.Data
 {
     public class InMemoryWeddingStore : ICanStoreWeddings
     {
-        private readonly Dictionary<Guid, Wedding> weddingDictionary = new Dictionary<Guid, Wedding>();
+        private readonly Dictionary<string, Wedding> weddingDictionary = new Dictionary<string, Wedding>();
 
         public IEnumerable<StorableWedding> All()
         {
             return weddingDictionary.Select(w => StorableWedding.Existing(w.Key, w.Value));
         }
 
-        public Wedding Load(Guid id)
+        public Wedding Load(string id)
         {
             if (!weddingDictionary.ContainsKey(id))
             {

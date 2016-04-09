@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Dora.WeddingPlanner.UserInteraction.Commands
 {
-    public class CreateWeddingCommand : ImAnInteractionCommand<Guid>
+    public class CreateWeddingCommand : ImAnInteractionCommand<string>
     {
         public PersonDto Bride { get; set; }
         public PersonDto Groom { get; set; }
 
-        Guid ImAnInteractionCommand<Guid>.Execute()
+        string ImAnInteractionCommand<string>.Execute()
         {
             return new WeddingDefinitionUseCase(Interactor.Store)
                 .DefineNew(this.Bride.Map(), this.Groom.Map())

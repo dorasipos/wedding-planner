@@ -11,11 +11,11 @@ namespace Dora.WeddingPlanner.Core
 {
     public class WeddingUseCase
     {
-        private readonly Guid weddingId;
+        private readonly string weddingId;
         private readonly Wedding wedding;
         private readonly ICanStoreWeddings weddingStore;
 
-        public WeddingUseCase(Wedding wedding, Guid weddingId, ICanStoreWeddings store)
+        public WeddingUseCase(Wedding wedding, string weddingId, ICanStoreWeddings store)
         {
             this.wedding = wedding;
             this.weddingId = weddingId;

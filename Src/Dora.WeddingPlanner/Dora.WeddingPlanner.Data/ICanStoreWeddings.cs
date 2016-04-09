@@ -11,7 +11,7 @@ namespace Dora.WeddingPlanner.Data
     public interface ICanStoreWeddings
     {
         void Save(StorableWedding wedding);
-        Wedding Load(Guid id);
+        Wedding Load(string id);
         IEnumerable<StorableWedding> All();
     }
 }

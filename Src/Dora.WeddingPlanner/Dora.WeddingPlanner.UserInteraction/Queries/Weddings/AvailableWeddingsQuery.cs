@@ -9,13 +9,13 @@ using Dora.WeddingPlanner.UserInteraction.Model;
 
 namespace Dora.WeddingPlanner.UserInteraction.Queries.Weddings
 {
-    public class AvailableWeddingsQuery : ImAQuery<IEnumerable<KeyValuePair<Guid, WeddingDto>>, object>
+    public class AvailableWeddingsQuery : ImAQuery<IEnumerable<KeyValuePair<string, WeddingDto>>, object>
     {
-        public IEnumerable<KeyValuePair<Guid, WeddingDto>> Query(object parameter)
+        public IEnumerable<KeyValuePair<string, WeddingDto>> Query(object parameter)
         {
             foreach (var w in new WeddingDefinitionUseCase(Interactor.Store)
                 .FetchAll()
-                .Select(w => new KeyValuePair<Guid, WeddingDto>(w.Key, w.Value.Map())))
+                .Select(w => new KeyValuePair<string, WeddingDto>(w.Key, w.Value.Map())))
             {
                 yield return w;
             }

@@ -24,7 +24,7 @@ namespace Dora.WeddingPlanner.Web.Api
 
             Get["/{WeddingId}"] = p =>
             {
-                var result = Interactor.Query(new LoadWeddingQuery(), (Guid)p.WeddingId);
+                var result = Interactor.Query(new LoadWeddingQuery(), (string)p.WeddingId);
                 return Response.AsJson(result).WithStatusCode(result.StatusCode());
             };
 

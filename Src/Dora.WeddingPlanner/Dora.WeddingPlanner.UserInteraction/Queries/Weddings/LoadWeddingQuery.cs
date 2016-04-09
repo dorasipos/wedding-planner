@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Dora.WeddingPlanner.UserInteraction.Queries.Weddings
 {
-    public class LoadWeddingQuery : ImAQuery<WeddingDto, Guid>
+    public class LoadWeddingQuery : ImAQuery<WeddingDto, string>
     {
-        public WeddingDto Query(Guid weddingId)
+        public WeddingDto Query(string weddingId)
         {
             return new WeddingDefinitionUseCase(Interactor.Store)
                 .Load(weddingId)

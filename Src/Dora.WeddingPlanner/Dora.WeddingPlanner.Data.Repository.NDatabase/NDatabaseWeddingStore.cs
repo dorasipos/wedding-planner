@@ -31,12 +31,13 @@ namespace Dora.WeddingPlanner.Data.Repository.NDatabase
             }
         }
 
-        public Wedding Load(Guid id)
+        public Wedding Load(string id)
         {
             using (var database = OdbFactory.Open(this.databaseFilePath))
             {
-                var weddingEntity = database.QueryAndExecute<StorableWedding>()
-                    .SingleOrDefault(s => s.Id == id);
+                var query = database.Query<StorableWedding>();
+                query.Descend("Id").Constrain(id).Equal();
+                var weddingEntity = query.Execute<StorableWedding>().SingleOrDefault();
 
                 if (weddingEntity == null)
                 {
