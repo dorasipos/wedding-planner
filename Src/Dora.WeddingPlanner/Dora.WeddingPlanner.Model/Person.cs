@@ -26,5 +26,10 @@ namespace Dora.WeddingPlanner.Model
         public string FirstName { get; }
         public string LastName { get; }
         public string DisplayName { get { return this.displayName; } }
+
+        public override string ToString()
+        {
+            return this.displayName;
+        }
     }
 }

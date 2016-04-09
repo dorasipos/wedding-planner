@@ -35,10 +35,8 @@ namespace Dora.WeddingPlanner.Data.Repository.NDatabase
         {
             using (var database = OdbFactory.Open(this.databaseFilePath))
             {
-                var query = database.Query<StorableWedding>();
-                query.Descend("Id").Constrain(id).Identity().Equal();
-
-                var weddingEntity = query.Execute<StorableWedding>().SingleOrDefault();
+                var weddingEntity = database.QueryAndExecute<StorableWedding>()
+                    .SingleOrDefault(s => s.Id == id);
 
                 if (weddingEntity == null)
                 {

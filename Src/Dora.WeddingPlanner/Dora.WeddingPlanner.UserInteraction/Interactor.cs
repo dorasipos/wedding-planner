@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.Data;
-using Dora.WeddingPlanner.Data.Repository.NDatabase;
 using Dora.WeddingPlanner.UserInteraction.Commands;
 using Dora.WeddingPlanner.UserInteraction.Queries;
+using Dora.WeddingPlanner.Data.Persistence.FileSystem;
+using Dora.WeddingPlanner.Data.Repository.NDatabase;
 
 namespace Dora.WeddingPlanner.UserInteraction
 {
@@ -22,7 +23,7 @@ namespace Dora.WeddingPlanner.UserInteraction
                 return;
             }
 
-            weddingStore = new NDatabaseWeddingStore("Database.odb");
+            weddingStore = new NDatabaseWeddingStore("WeddingStore.ndata.odb");
 
             isInitialized = true;
         }

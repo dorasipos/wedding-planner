@@ -19,8 +19,8 @@ namespace Dora.WeddingPlanner.Data.Model
             : this(wedding, Guid.NewGuid())
         { }
 
-        public Guid Id { get; }
-        public Wedding Wedding { get; }
+        public Guid Id { get; private set; }
+        public Wedding Wedding { get; private set; }
 
         public static StorableWedding New(Wedding wedding)
         {
