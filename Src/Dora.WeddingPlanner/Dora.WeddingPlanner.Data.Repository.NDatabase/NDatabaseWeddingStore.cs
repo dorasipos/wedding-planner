@@ -22,11 +22,15 @@ namespace Dora.WeddingPlanner.Data.Repository.NDatabase
         {
             using (var database = OdbFactory.Open(this.databaseFilePath))
             {
-                var query = database.Query<StorableWedding>();
+                var fields = database.ValuesQuery<StorableWedding>()
+                    .Field("Id", "Id")
+                    .Field("Wedding.bride", "Bride")
+                    .Field("Wedding.groom", "Groom")
+                    .Execute();
 
-                foreach (var result in query.Execute<StorableWedding>())
+                foreach (var field in fields)
                 {
-                    yield return result;
+                    yield return StorableWedding.Existing((string)field.GetByAlias("Id"), new Wedding((Person)field.GetByAlias("Bride"), (Person)field.GetByAlias("Groom")));
                 }
             }
         }
