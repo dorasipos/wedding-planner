@@ -5,5 +5,9 @@
         <md-list-item ng-click="goTo('/' + wedding.id)" ng-repeat="wedding in weddings">
             <h4>{{wedding.bride.displayName}} and {{wedding.groom.displayName}}</h4>
         </md-list-item>
+        <md-list-item ng-click="goTo('/new')">
+            <md-icon>create</md-icon>
+            <p>...or plan a new wedding</p>
+        </md-list-item>
     </md-list>
 </div>
