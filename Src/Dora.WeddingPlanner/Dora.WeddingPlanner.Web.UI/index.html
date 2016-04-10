@@ -22,9 +22,20 @@
             <div class="md-toolbar-tools">
                 <span>Dora's Wedding Planning App</span>
                 <span flex></span>
-                <md-button>
-                    Options
-                </md-button>
+                <md-menu-bar>
+                    <md-menu>
+                        <md-button ng-click="$mdOpenMenu()">
+                            Options
+                        </md-button>
+                        <md-menu-content>
+                            <md-menu-item>
+                                <md-button ng-href="#/browse">
+                                    Browse weddings...
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-menu-bar>
             </div>
         </md-toolbar>
         <md-content>
