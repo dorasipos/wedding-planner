@@ -1,0 +1,56 @@
+﻿<md-grid-list md-cols-sm="2" md-cols-md="4" md-cols-lg="8" md-cols-gt-lg="16"
+              md-row-height="2:2"
+              md-gutter="1em"
+              ng-cloak>
+
+    <md-grid-tile md-colspan="2" md-rowspan="1">
+        <md-grid-tile-header layout-align="center center">
+            <h3 layout-margin>Active Tasks</h3>
+        </md-grid-tile-header>
+
+        <md-content ng-show="wedding.tasks.length" flex="auto" layout-align="center center" layout-margin>
+
+            <h2 class="md-title" layout-align="center center">{{wedding.tasks[0].title}}</h2>
+            <p class="md-subhead">{{wedding.tasks[0].details[0].content}}</p>
+            <div layout="coumn">
+                <md-button flex="auto" class="md-raised">
+                    Open
+                    <md-icon>launch</md-icon>
+                </md-button>
+            </div>
+
+        </md-content>
+
+        <span ng-hide="wedding.tasks.length">There are no outstanding tasks</span>
+
+        <md-grid-tile-footer layout-align="end center">
+            <span layout-margin>{{wedding.tasks.length}} remaining</span>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+
+    <md-grid-tile md-colspan="2" md-rowspan="1">
+        <md-grid-tile-header layout-align="center center">
+            <h3 layout-margin>Planned events</h3>
+        </md-grid-tile-header>
+
+        <md-content ng-show="wedding.events.length" flex="auto" layout-align="center center" layout-margin>
+
+            <h2 class="md-title" layout-align="center center">{{wedding.events[0].title}}</h2>
+            <p class="md-subhead">{{wedding.events[0].details[0].content}}</p>
+            <div layout="coumn">
+                <md-button flex="auto" class="md-raised">
+                    Open
+                    <md-icon>launch</md-icon>
+                </md-button>
+            </div>
+
+        </md-content>
+
+        <span ng-hide="wedding.events.length">There are no settled events</span>
+
+        <md-grid-tile-footer layout-align="end center">
+            <span layout-margin>{{wedding.events.length || 'No'}} events</span>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+
+</md-grid-list>
