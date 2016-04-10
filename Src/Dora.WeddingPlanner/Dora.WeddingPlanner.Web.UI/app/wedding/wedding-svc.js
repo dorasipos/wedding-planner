@@ -22,8 +22,8 @@
             }
             else {
                 $http.get('../wedding/' + $p.weddingId)
-                    .success(function (weddingDto) {
-                        wedding = weddingDto;
+                    .success(function (queryResult) {
+                        wedding = queryResult.result;
                         deff.resolve(wedding);
                     })
                     .error(function () {

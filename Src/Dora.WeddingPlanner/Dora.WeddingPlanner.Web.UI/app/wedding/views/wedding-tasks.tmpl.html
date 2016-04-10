@@ -1,0 +1,23 @@
+﻿<div>
+    <md-toolbar layout="row" class="md-hue-3">
+        <div class="md-toolbar-tools">
+            <span>To Do...</span>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <md-card ng-repeat="task in wedding.tasks">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{task.title}}</span>
+                    <span class="md-subhead">{{task.details[0].content}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>
+                    Expand
+                    <md-icon>launch</md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </md-content>
+</div>
