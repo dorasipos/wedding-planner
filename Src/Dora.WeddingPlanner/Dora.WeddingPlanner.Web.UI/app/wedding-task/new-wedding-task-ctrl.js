@@ -2,43 +2,46 @@
     'use strict';
 
     ng.module('wedding-task')
-    .controller('newWeddingTask', ['$scope', '$location', '$mdDialog', 'wedding', function ($s, $l, $mdDialog, w) {
+    .controller('newWeddingTask', ['$scope', '$http', '$location', '$mdDialog', '$mdToast', 'wedding', function ($s, $http, $l, $mdDialog, $toast, w) {
 
         $s.title = null;
         $s.description = null;
         $s.isMandatory = false;
 
-        //$s.submit = function () {
-        //    $s.submit.ing = true;
-        //    $http.post('../wedding', {
-        //        bride: $s.bride,
-        //        groom: $s.groom
-        //    })
-        //    .success(function (response) {
-        //        $toast
-        //            .show(
-        //                $toast.simple()
-        //                    .textContent('Successfully created a new wedding, taking U there in a bit...')
-        //                    .position('bottom right')
-        //                    .hideDelay(2000)
-        //            )
-        //            .then(function () {
-        //                $l.path('/' + response.result);
-        //            });
-        //    })
-        //    .error(function () {
-        //        $toast
-        //            .show(
-        //                $toast.simple()
-        //                    .textContent('Error creating a new wedding')
-        //                    .position('bottom right')
-        //                    .hideDelay(5000)
-        //            );
-        //    })
-        //    .finally(function () {
-        //        delete $s.submit.ing;
-        //    });
-        //};
+        $s.submit = function () {
+            $s.submit.ing = true;
+            $http.post('../task', {
+                weddingId: w.id(),
+                title: $s.title,
+                description: $s.description,
+                isMandatory: $s.isMandatory
+            })
+            .success(function (response) {
+                $toast
+                    .show(
+                        $toast.simple()
+                            .textContent('Successfully created a new wedding task, taking U back to the wedding dash...')
+                            .position('bottom right')
+                            .hideDelay(2000)
+                    )
+                    .then(function () {
+                        w.refresh();
+                        $l.path('/' + w.id());
+                    });
+            })
+            .error(function () {
+                $toast
+                    .show(
+                        $toast.simple()
+                            .textContent('Error creating a new wedding task')
+                            .position('bottom right')
+                            .hideDelay(5000)
+                    );
+            })
+            .finally(function () {
+                delete $s.submit.ing;
+            });
+        };
 
         $s.cancel = function (ev) {
             var confirm = $mdDialog.confirm()

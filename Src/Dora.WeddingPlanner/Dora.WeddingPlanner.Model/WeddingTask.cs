@@ -23,7 +23,13 @@ namespace Dora.WeddingPlanner.Model
 
         public string Title { get; }
 
-        public IReadOnlyList<Comment> Details { get; private set; }
+        public IReadOnlyList<Comment> Details
+        {
+            get
+            {
+                return details;
+            }
+        }
 
         public virtual WeddingTask Describe(string description)
         {

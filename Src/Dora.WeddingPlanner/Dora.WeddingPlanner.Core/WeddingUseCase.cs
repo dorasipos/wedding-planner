@@ -22,9 +22,21 @@ namespace Dora.WeddingPlanner.Core
             this.weddingStore = store;
         }
 
-        public WeddingTask DefineNewTask(string title, string description = null)
+        public BasicWeddingTask DefineNewTask(string title, string description = null)
         {
             var weddingTask = new BasicWeddingTask(title);
+            if (!string.IsNullOrWhiteSpace(description))
+            {
+                weddingTask.Describe(description);
+            }
+            this.wedding.AddTask(weddingTask);
+            this.weddingStore.Save(StorableWedding.Existing(this.weddingId, this.wedding));
+            return weddingTask;
+        }
+
+        public MandatoryWeddingTask DefineNewMandatoryTask(string title, string description = null)
+        {
+            var weddingTask = new MandatoryWeddingTask(title);
             if (!string.IsNullOrWhiteSpace(description))
             {
                 weddingTask.Describe(description);

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dora.WeddingPlanner.Data.Model;
 using Dora.WeddingPlanner.Model;
 using NDatabase;
+using NDatabase.Api;
 
 namespace Dora.WeddingPlanner.Data.Repository.NDatabase
 {
@@ -37,6 +38,13 @@ namespace Dora.WeddingPlanner.Data.Repository.NDatabase
 
         public Wedding Load(string id)
         {
+            OID oid;
+            return Load(id, out oid);
+        }
+
+        private Wedding Load(string id, out OID entityId)
+        {
+            entityId = null;
             using (var database = OdbFactory.Open(this.databaseFilePath))
             {
                 var query = database.Query<StorableWedding>();
@@ -48,14 +56,23 @@ namespace Dora.WeddingPlanner.Data.Repository.NDatabase
                     return null;
                 }
 
+                entityId = database.GetObjectId(weddingEntity);
+
                 return weddingEntity.Wedding;
             }
         }
 
         public void Save(StorableWedding wedding)
         {
+            OID existingId;
+            var existing = Load(wedding.Id, out existingId);
             using (var database = OdbFactory.Open(this.databaseFilePath))
             {
+                if (existing != null)
+                {
+                    database.DeleteObjectWithId(existingId);
+                    database.Commit();
+                }
                 database.Store(wedding);
             }
         }

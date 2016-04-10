@@ -33,6 +33,11 @@
             return deff.promise;
         };
 
+        this.refresh = function () {
+            wedding = null;
+            return this;
+        };
+
     }]);
 
 })(this.angular);

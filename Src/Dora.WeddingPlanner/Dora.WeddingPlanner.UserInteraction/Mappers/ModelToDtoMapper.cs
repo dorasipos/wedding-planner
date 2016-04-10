@@ -20,7 +20,7 @@ namespace Dora.WeddingPlanner.UserInteraction.Mappers
             };
         }
 
-        private static WeddingTaskDto Map(WeddingTask model)
+        public static WeddingTaskDto Map(WeddingTask model)
         {
             return new WeddingTaskDto
             {
