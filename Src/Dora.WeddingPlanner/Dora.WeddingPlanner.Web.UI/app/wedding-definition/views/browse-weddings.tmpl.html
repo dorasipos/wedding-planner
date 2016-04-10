@@ -1,3 +1,9 @@
 ﻿<div>
-    Browse Weddings
+    <md-progress-linear md-mode="indeterminate" ng-hide="weddings"></md-progress-linear>
+    <md-list ng-cloak>
+        <md-subheader class="md-primary">Weddings you're currently planning...</md-subheader>
+        <md-list-item ng-click="goTo('/' + wedding.id)" ng-repeat="wedding in weddings">
+            <h4>{{wedding.bride.displayName}} and {{wedding.groom.displayName}}</h4>
+        </md-list-item>
+    </md-list>
 </div>
