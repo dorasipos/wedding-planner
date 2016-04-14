@@ -12,5 +12,10 @@ namespace Dora.WeddingPlanner.Web.Host
 
             Nancy.Json.JsonSettings.MaxJsonLength = int.MaxValue;
         }
+
+        protected override void ConfigureApplicationContainer(TinyIoCContainer container)
+        {
+            base.ConfigureApplicationContainer(container);
+        }
     }
 }

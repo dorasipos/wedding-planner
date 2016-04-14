@@ -29,7 +29,6 @@ namespace Dora.WeddingPlanner.Web.Host
             options.StaticFileOptions.ServeUnknownFileTypes = true;
             options.DefaultFilesOptions.DefaultFileNames = new[] { "index.html" };
 
-
             app
                 .UseCors(CorsOptions.AllowAll)
                 .UseFileServer(options)
