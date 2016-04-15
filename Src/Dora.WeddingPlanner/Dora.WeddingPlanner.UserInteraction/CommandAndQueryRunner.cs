@@ -19,7 +19,7 @@ namespace Dora.WeddingPlanner.UserInteraction
             Exception exception;
             TResult result;
 
-            if (!new Func<TResult>(() => command.Execute()).Try(out result, out exception))
+            if (!Trace.Able(command.Execute).Try(out result, out exception))
             {
                 log.Error("Error running command {1}{0}Details{0}========={0}{2}{0}{3}", Environment.NewLine, command, exception.Message, exception.StackTrace);
                 return new ExceptionCommandResult<TResult>(exception);
@@ -33,7 +33,7 @@ namespace Dora.WeddingPlanner.UserInteraction
             Exception exception;
             TResult result;
 
-            if (!new Func<TResult>(() => query.Query(parameter)).Try(out result, out exception))
+            if (!Trace.Able(query.Query, parameter).Try(out result, out exception))
             {
                 log.Error("Error running query {1}{0}Details{0}========={0}{2}{0}{3}", Environment.NewLine, query, exception.Message, exception.StackTrace);
                 return new ExceptionQueryResult<TResult>(exception);

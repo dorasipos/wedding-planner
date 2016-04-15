@@ -28,8 +28,7 @@ namespace Dora.WeddingPlanner.UserInteraction
                 return;
             }
 
-            new Action(InitializeStore)
-                .MeasureWith(log.Timing("Load wedding store"));
+            Trace.Able(InitializeStore).MeasureWith(log.Timing("Load wedding store"));
 
             isInitialized = true;
         }
@@ -60,7 +59,7 @@ namespace Dora.WeddingPlanner.UserInteraction
         {
             EnsureInitialization();
 
-            return new Func<CommandResult<TResult>>(() => CommandAndQueryRunner.Run(command))
+            return Trace.Able(CommandAndQueryRunner.Run, command)
                 .MeasureWith(log.Timing(string.Format("Run Command {0}", command)));
         }
 
@@ -68,7 +67,7 @@ namespace Dora.WeddingPlanner.UserInteraction
         {
             EnsureInitialization();
 
-            return new Func<QueryResult<TResult>>(() => CommandAndQueryRunner.Query(query, parameter))
+            return Trace.Able(CommandAndQueryRunner.Query, query, parameter)
                 .MeasureWith(log.Timing(string.Format("Run Query {0}{1}{2}", query, parameter != null ? " with parameter: " : string.Empty, parameter)));
         }
     }
