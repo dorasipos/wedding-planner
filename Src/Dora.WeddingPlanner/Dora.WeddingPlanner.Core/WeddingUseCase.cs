@@ -10,7 +10,7 @@ using Dora.WeddingPlanner.Model.WeddingTasks;
 
 namespace Dora.WeddingPlanner.Core
 {
-    public class WeddingUseCase
+    public sealed class WeddingUseCase
     {
         private readonly string weddingId;
         private readonly Wedding wedding;

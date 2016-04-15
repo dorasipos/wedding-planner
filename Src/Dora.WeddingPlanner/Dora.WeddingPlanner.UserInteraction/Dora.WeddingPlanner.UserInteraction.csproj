@@ -58,6 +58,7 @@
     <Compile Include="Mappers\ModelToDtoMapper.cs" />
     <Compile Include="Model\CommentDto.cs" />
     <Compile Include="Model\PersonDto.cs" />
+    <Compile Include="Model\PredefinedWeddingTaskDto.cs" />
     <Compile Include="Model\WeddingDto.cs" />
     <Compile Include="Model\WeddingTaskDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Queries\ImAQuery.cs" />
     <Compile Include="Queries\QueryResult.cs" />
     <Compile Include="Queries\SuccessfulQueryResult.cs" />
+    <Compile Include="Queries\Tasks\PredefinedWeddingTasksQuery.cs" />
     <Compile Include="Queries\Weddings\AvailableWeddingsQuery.cs" />
     <Compile Include="Queries\Weddings\LoadWeddingQuery.cs" />
   </ItemGroup>

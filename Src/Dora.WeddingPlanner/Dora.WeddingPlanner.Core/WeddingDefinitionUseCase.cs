@@ -12,7 +12,7 @@ using NLog;
 
 namespace Dora.WeddingPlanner.Core
 {
-    public class WeddingDefinitionUseCase
+    public sealed class WeddingDefinitionUseCase
     {
         private static Logger log = LogManager.GetCurrentClassLogger();
 

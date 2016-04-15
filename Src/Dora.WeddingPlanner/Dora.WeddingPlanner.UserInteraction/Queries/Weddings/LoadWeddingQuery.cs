@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Dora.WeddingPlanner.UserInteraction.Queries.Weddings
 {
-    public class LoadWeddingQuery : ImAQuery<WeddingDto, string>
+    public sealed class LoadWeddingQuery : ImAQuery<WeddingDto, string>
     {
         public WeddingDto Query(string weddingId)
         {

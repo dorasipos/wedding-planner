@@ -9,7 +9,7 @@ using Dora.WeddingPlanner.UserInteraction.Model;
 
 namespace Dora.WeddingPlanner.UserInteraction.Queries.Weddings
 {
-    public class AvailableWeddingsQuery : ImAQuery<IEnumerable<KeyValuePair<string, WeddingDto>>, object>
+    public sealed class AvailableWeddingsQuery : ImAQuery<IEnumerable<KeyValuePair<string, WeddingDto>>, object>
     {
         public IEnumerable<KeyValuePair<string, WeddingDto>> Query(object parameter)
         {

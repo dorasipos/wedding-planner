@@ -10,7 +10,7 @@ using Dora.WeddingPlanner.UserInteraction.Mappers;
 
 namespace Dora.WeddingPlanner.UserInteraction.Commands.Weddings
 {
-    public class CreateWeddingTaskCommand : ImAnInteractionCommand<WeddingTaskDto>
+    public sealed class CreateWeddingTaskCommand : ImAnInteractionCommand<WeddingTaskDto>
     {
         public string WeddingId { get; set; }
         public string Title { get; set; }

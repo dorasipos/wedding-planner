@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dora.WeddingPlanner.Model.WeddingTasks;
 
 namespace Dora.WeddingPlanner.UserInteraction.Mappers
 {
@@ -21,6 +22,16 @@ namespace Dora.WeddingPlanner.UserInteraction.Mappers
         }
 
         public static WeddingTaskDto Map(this WeddingTask model)
+        {
+            return ModelToDtoMapper.Map(model);
+        }
+
+        public static PredefinedWeddingTaskDto Map(this PredefinedWeddingTask model)
+        {
+            return ModelToDtoMapper.Map(model);
+        }
+
+        public static IEnumerable<PredefinedWeddingTaskDto> Map(this IEnumerable<KeyValuePair<string, PredefinedWeddingTask>> model)
         {
             return ModelToDtoMapper.Map(model);
         }

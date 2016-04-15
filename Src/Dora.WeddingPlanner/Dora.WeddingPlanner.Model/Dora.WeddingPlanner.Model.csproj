@@ -57,7 +57,13 @@
     <Compile Include="WeddingTaskOutcomes\ImportantOutcome.cs" />
     <Compile Include="WeddingTaskOutcomes\NoOutcome.cs" />
     <Compile Include="WeddingTaskOutcomes\SimpleOutcome.cs" />
+    <Compile Include="WeddingTasks\PredefinedWeddingTask.cs" />
+    <Compile Include="WeddingTasks\Predefined\PlanCivilCeremonyTask.cs" />
+    <Compile Include="WeddingTasks\Predefined\PlanReligiousCeremonyTask.cs" />
+    <Compile Include="WeddingTasks\Predefined\PlanWeddingReceptionPartyTask.cs" />
+    <Compile Include="WeddingTasks\Predefined\PredefinedWeddingTaskBag.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -59,5 +59,22 @@ namespace Dora.WeddingPlanner.UserInteraction.Mappers
                 LastName = model.LastName
             };
         }
+
+        public static PredefinedWeddingTaskDto Map(PredefinedWeddingTask model)
+        {
+            return new PredefinedWeddingTaskDto
+            {
+                Id = model.Id,
+                Task = Map(model as WeddingTask)
+            };
+        }
+
+        public static IEnumerable<PredefinedWeddingTaskDto> Map(IEnumerable<KeyValuePair<string, PredefinedWeddingTask>> model)
+        {
+            foreach (var t in model)
+            {
+                yield return Map(t.Value);
+            }
+        }
     }
 }

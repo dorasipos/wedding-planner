@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dora.WeddingPlanner.UserInteraction.Model
 {
-    public class PersonDto
+    public sealed class PersonDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

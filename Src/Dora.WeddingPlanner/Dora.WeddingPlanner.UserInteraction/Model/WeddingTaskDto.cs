@@ -2,7 +2,7 @@
 
 namespace Dora.WeddingPlanner.UserInteraction.Model
 {
-    public class WeddingTaskDto
+    public sealed class WeddingTaskDto
     {
         public enum TaskPriority
         {
