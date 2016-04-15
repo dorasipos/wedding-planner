@@ -17,5 +17,15 @@ namespace Dora.WeddingPlanner.Tracing
         {
             return Wrappers.MeasureFunctionWith(action, measureTools);
         }
+
+        public static bool Try(this Action action, out Exception exception)
+        {
+            return Wrappers.TryAction(action, out exception);
+        }
+
+        public static bool Try<T>(this Func<T> func, out T result, out Exception exception)
+        {
+            return Wrappers.TryFunction(func, out result, out exception);
+        }
     }
 }

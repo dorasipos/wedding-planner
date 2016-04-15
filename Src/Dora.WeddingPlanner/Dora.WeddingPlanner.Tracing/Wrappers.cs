@@ -24,5 +24,36 @@ namespace Dora.WeddingPlanner.Tracing
             MeasureActionWith(() => { result = functionToMeasure(); }, measureTools);
             return result;
         }
+
+        public static bool TryAction(Action action, out Exception exception)
+        {
+            exception = null;
+            try
+            {
+                action();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                exception = ex;
+                return false;
+            }
+        }
+
+        public static bool TryFunction<T>(Func<T> func, out T result, out Exception exception)
+        {
+            exception = null;
+            try
+            {
+                result = func();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                exception = ex;
+                result = default(T);
+                return false;
+            }
+        }
     }
 }
