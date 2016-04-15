@@ -1,12 +1,21 @@
-﻿(function (ng) {
+﻿(function (ng, _) {
     'use strict';
 
     ng.module('wedding-task')
-    .controller('newWeddingTask', ['$scope', '$http', '$location', '$mdDialog', '$mdToast', 'wedding', function ($s, $http, $l, $mdDialog, $toast, w) {
+    .controller('newWeddingTask', ['$scope', '$routeParams', '$http', '$location', '$mdDialog', '$mdToast', 'tasks', 'wedding', function ($s, $p, $http, $l, $mdDialog, $toast, tasks, w) {
 
         $s.title = null;
         $s.description = null;
         $s.isMandatory = false;
+
+        if ($p.id) {
+            tasks.predefined().then(function (tasks) {
+                var pTask = _.find(tasks, { id: $p.id });
+                if (pTask) {
+                    $s.title = pTask.task.title;
+                }
+            });
+        }
 
         $s.submit = function () {
             $s.submit.ing = true;
@@ -59,4 +68,4 @@
 
     }]);
 
-})(this.angular);
+})(this.angular, this._);

@@ -1,7 +1,7 @@
 ﻿<md-list ng-cloak>
     <md-subheader class="md-primary">So, what next?</md-subheader>
 
-    <md-list-item ng-click="goTo('/task/new')" ng-repeat="pt in predefinedTasks track by pt.id">
+    <md-list-item ng-click="goTo('/task/new/' + pt.id)" ng-repeat="pt in predefinedTasks track by pt.id">
         <md-icon>{{taskIcon(pt.id)}}</md-icon>
         <p>{{pt.task.title}}</p>
     </md-list-item>
