@@ -6,11 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.Data;
 using Dora.WeddingPlanner.Data.Model;
+using Dora.WeddingPlanner.Logging;
+using Dora.WeddingPlanner.Tracing;
+using NLog;
 
 namespace Dora.WeddingPlanner.Core
 {
     public class WeddingDefinitionUseCase
     {
+        private static Logger log = LogManager.GetCurrentClassLogger();
+
         private readonly ICanStoreWeddings weddingStore;
 
         public WeddingDefinitionUseCase(ICanStoreWeddings store)

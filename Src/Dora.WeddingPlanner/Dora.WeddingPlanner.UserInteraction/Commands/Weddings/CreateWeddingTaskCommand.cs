@@ -31,5 +31,10 @@ namespace Dora.WeddingPlanner.UserInteraction.Commands.Weddings
             }
             return task.Map();
         }
+
+        public override string ToString()
+        {
+            return string.Format("Create {0}Wedding Task for wedding id {1}, titled {2}", this.IsMandatory ? "Mandatory " : string.Empty, this.WeddingId, this.Title);
+        }
     }
 }

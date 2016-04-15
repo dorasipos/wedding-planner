@@ -17,5 +17,10 @@ namespace Dora.WeddingPlanner.UserInteraction.Queries.Weddings
                 .Load(weddingId)
                 .Map();
         }
+
+        public override string ToString()
+        {
+            return "Load Wedding";
+        }
     }
 }

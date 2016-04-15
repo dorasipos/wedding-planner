@@ -20,5 +20,10 @@ namespace Dora.WeddingPlanner.UserInteraction.Queries.Weddings
                 yield return w;
             }
         }
+
+        public override string ToString()
+        {
+            return "Available Weddings";
+        }
     }
 }

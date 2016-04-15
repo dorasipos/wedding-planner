@@ -8,11 +8,16 @@ using Dora.WeddingPlanner.UserInteraction.Commands;
 using Dora.WeddingPlanner.UserInteraction.Queries;
 using Dora.WeddingPlanner.Data.Persistence.FileSystem;
 using Dora.WeddingPlanner.Data.Repository.NDatabase;
+using Dora.WeddingPlanner.Logging;
+using Dora.WeddingPlanner.Tracing;
+using NLog;
 
 namespace Dora.WeddingPlanner.UserInteraction
 {
     public static class Interactor
     {
+        private static Logger log = LogManager.GetCurrentClassLogger();
+
         private static bool isInitialized = false;
         private static ICanStoreWeddings weddingStore;
 
@@ -23,9 +28,15 @@ namespace Dora.WeddingPlanner.UserInteraction
                 return;
             }
 
-            weddingStore = new NDatabaseWeddingStore("WeddingStore.ndata.odb");
+            new Action(InitializeStore)
+                .MeasureWith(log.Timing("Load wedding store"));
 
             isInitialized = true;
+        }
+
+        private static void InitializeStore()
+        {
+            weddingStore = new NDatabaseWeddingStore("WeddingStore.ndata.odb");
         }
 
         internal static ICanStoreWeddings Store
@@ -49,14 +60,16 @@ namespace Dora.WeddingPlanner.UserInteraction
         {
             EnsureInitialization();
 
-            return CommandAndQueryRunner.Run(command);
+            return new Func<CommandResult<TResult>>(() => CommandAndQueryRunner.Run(command))
+                .MeasureWith(log.Timing(string.Format("Run Command {0}", command)));
         }
 
         public static QueryResult<TResult> Query<TResult, TParameter>(ImAQuery<TResult, TParameter> query, TParameter parameter)
         {
             EnsureInitialization();
 
-            return CommandAndQueryRunner.Query(query, parameter);
+            return new Func<QueryResult<TResult>>(() => CommandAndQueryRunner.Query(query, parameter))
+                .MeasureWith(log.Timing(string.Format("Run Query {0}{1}{2}", query, parameter != null ? " with parameter: " : string.Empty, parameter)));
         }
     }
 }

@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,7 +68,9 @@
     <Compile Include="Queries\Weddings\AvailableWeddingsQuery.cs" />
     <Compile Include="Queries\Weddings\LoadWeddingQuery.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dora.WeddingPlanner.Core\Dora.WeddingPlanner.Core.csproj">
       <Project>{d6cc927d-b2ab-4686-be11-05b0b137eeea}</Project>
@@ -82,9 +88,17 @@
       <Project>{f77bbdf2-e50e-4823-9b51-8a3437239d8b}</Project>
       <Name>Dora.WeddingPlanner.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dora.WeddingPlanner.Logging\Dora.WeddingPlanner.Logging.csproj">
+      <Project>{e66a610e-912f-46db-898d-0ff62a177692}</Project>
+      <Name>Dora.WeddingPlanner.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dora.WeddingPlanner.Model\Dora.WeddingPlanner.Model.csproj">
       <Project>{b69b1933-553d-4d55-b69b-560be88f08fa}</Project>
       <Name>Dora.WeddingPlanner.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dora.WeddingPlanner.Tracing\Dora.WeddingPlanner.Tracing.csproj">
+      <Project>{75346587-f802-448a-a8ab-f9bdac90fc74}</Project>
+      <Name>Dora.WeddingPlanner.Tracing</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

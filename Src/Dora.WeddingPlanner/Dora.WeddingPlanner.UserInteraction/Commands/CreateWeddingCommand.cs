@@ -20,5 +20,10 @@ namespace Dora.WeddingPlanner.UserInteraction.Commands
                 .DefineNew(this.Bride.Map(), this.Groom.Map())
                 .Key;
         }
+
+        public override string ToString()
+        {
+            return string.Format("Create Wedding between {0} and {1}", this.Bride, this.Groom);
+        }
     }
 }
