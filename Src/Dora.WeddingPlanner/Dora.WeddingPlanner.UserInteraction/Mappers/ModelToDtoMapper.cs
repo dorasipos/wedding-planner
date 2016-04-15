@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.Model;
+using Dora.WeddingPlanner.Model.WeddingTasks;
 using Dora.WeddingPlanner.UserInteraction.Model;
 
 namespace Dora.WeddingPlanner.UserInteraction.Mappers

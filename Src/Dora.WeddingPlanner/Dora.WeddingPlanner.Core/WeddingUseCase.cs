@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dora.WeddingPlanner.Data;
 using Dora.WeddingPlanner.Data.Model;
 using Dora.WeddingPlanner.Model;
+using Dora.WeddingPlanner.Model.WeddingTasks;
 
 namespace Dora.WeddingPlanner.Core
 {
