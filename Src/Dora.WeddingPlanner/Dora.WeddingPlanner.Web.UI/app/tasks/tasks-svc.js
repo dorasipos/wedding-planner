@@ -25,7 +25,8 @@
             else {
                 $http.get('../tasks/predefined')
                 .success(function (queryResult) {
-                    deff.resolve(queryResult.result);
+                    predefinedTasks = queryResult.result;
+                    deff.resolve(predefinedTasks);
                 })
                 .error(function (queryResult) {
                     deff.reject(queryResult.details);
