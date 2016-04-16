@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Dora.WeddingPlanner.UserInteraction;
-using Dora.WeddingPlanner.UserInteraction.Commands;
-using Dora.WeddingPlanner.UserInteraction.Commands.Weddings;
-using Dora.WeddingPlanner.UserInteraction.Model;
+using Dora.WeddingPlanner.Model;
+using Dora.WeddingPlanner.Model.WeddingTasks;
+using Dora.WeddingPlanner.Model.WeddingTasks.Predefined;
+using Dora.WeddingPlanner.Model.DTO.Mapping;
 
 namespace Dora.WeddingPlanner.TestingPlayground
 {
@@ -14,24 +14,11 @@ namespace Dora.WeddingPlanner.TestingPlayground
     {
         static void Main(string[] args)
         {
-            Interactor.Initialize();
-            var result = Interactor.Run(new CreateWeddingCommand
-            {
-                Bride = new PersonDto { FirstName = "Ana", LastName = "Blandiana" },
-                Groom = new PersonDto { FirstName = "David", LastName = "Morar" }
-            });
-            var id = result.Details;
+            var wedding = new Wedding(new Person("Pop", "Bia"), new Person("Pop", "Ion"));
+            wedding.AddTask(new PlanCivilCeremonyTask().Describe("Test"));
 
-            Console.WriteLine(result);
+            var dto = wedding.Map();
 
-            var result2 = Interactor.Run(new CreateWeddingTaskCommand
-            {
-                WeddingId = id,
-                Description = "Scout for a place regarding the wedding reception",
-                Title = "Find a place for the Wedding reception"
-            });
-
-            Console.WriteLine(result);
 
             Console.WriteLine("Done @ {0}", DateTime.Now);
             Console.ReadLine();

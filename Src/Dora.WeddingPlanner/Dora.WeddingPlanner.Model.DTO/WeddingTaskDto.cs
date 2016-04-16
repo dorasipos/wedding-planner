@@ -16,7 +16,7 @@ namespace Dora.WeddingPlanner.Model.DTO
 
         public string Title { get; private set; }
 
-        public IReadOnlyList<CommentDto> Details { get; private set; }
+        public CommentDto[] Details { get; private set; }
 
         public bool IsClosed { get; private set; }
 

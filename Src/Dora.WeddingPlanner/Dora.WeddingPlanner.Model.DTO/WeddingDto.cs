@@ -11,10 +11,10 @@ namespace Dora.WeddingPlanner.Model.DTO
         public PersonDto Bride { get; private set; }
         public PersonDto Groom { get; private set; }
 
-        public IReadOnlyList<WeddingTaskDto> Tasks { get; private set; }
+        public WeddingTaskDto[] Tasks { get; private set; }
 
-        public IReadOnlyList<WeddingEventDto> Events { get; private set; }
+        public WeddingEventDto[] Events { get; private set; }
 
-        public IReadOnlyList<WeddingGuestDto> Guests { get; private set; }
+        public WeddingGuestDto[] Guests { get; private set; }
     }
 }
