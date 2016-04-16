@@ -28,11 +28,11 @@ namespace Dora.WeddingPlanner.Model
         public Person Bride { get { return this.bride; } }
         public Person Groom { get { return this.groom; } }
 
-        public IReadOnlyList<WeddingEvent> Events { get { return this.events; } }
+        public IReadOnlyList<WeddingEvent> Events { get { return this.events; } private set { } }
 
-        public IReadOnlyList<WeddingTask> Tasks { get { return this.tasks; } }
+        public IReadOnlyList<WeddingTask> Tasks { get { return this.tasks; } private set { } }
 
-        public IReadOnlyList<WeddingGuest> Guests { get { return this.guests; } }
+        public IReadOnlyList<WeddingGuest> Guests { get { return this.guests; } private set { } }
 
         public Wedding AddTask(WeddingTask task)
         {

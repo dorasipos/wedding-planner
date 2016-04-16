@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dora.WeddingPlanner.Core;
-using Dora.WeddingPlanner.UserInteraction.Model;
 using Dora.WeddingPlanner.Model;
-using Dora.WeddingPlanner.UserInteraction.Mappers;
+using Dora.WeddingPlanner.Model.DTO;
+using Dora.WeddingPlanner.Model.DTO.Mapping;
 
 namespace Dora.WeddingPlanner.UserInteraction.Commands.Weddings
 {

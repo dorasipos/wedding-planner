@@ -1,6 +1,6 @@
 ﻿using Dora.WeddingPlanner.Core;
-using Dora.WeddingPlanner.UserInteraction.Mappers;
-using Dora.WeddingPlanner.UserInteraction.Model;
+using Dora.WeddingPlanner.Model.DTO;
+using Dora.WeddingPlanner.Model.DTO.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;

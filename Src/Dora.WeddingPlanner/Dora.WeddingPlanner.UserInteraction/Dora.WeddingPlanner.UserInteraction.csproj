@@ -53,14 +53,6 @@
     <Compile Include="Commands\SuccessfulCommandResult.cs" />
     <Compile Include="Commands\Weddings\CreateWeddingTaskCommand.cs" />
     <Compile Include="Interactor.cs" />
-    <Compile Include="Mappers\DtoToModelMapper.cs" />
-    <Compile Include="Mappers\Extensions.cs" />
-    <Compile Include="Mappers\ModelToDtoMapper.cs" />
-    <Compile Include="Model\CommentDto.cs" />
-    <Compile Include="Model\PersonDto.cs" />
-    <Compile Include="Model\PredefinedWeddingTaskDto.cs" />
-    <Compile Include="Model\WeddingDto.cs" />
-    <Compile Include="Model\WeddingTaskDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\ExceptionQueryResult.cs" />
     <Compile Include="Queries\ImAQuery.cs" />
@@ -93,6 +85,10 @@
     <ProjectReference Include="..\Dora.WeddingPlanner.Logging\Dora.WeddingPlanner.Logging.csproj">
       <Project>{e66a610e-912f-46db-898d-0ff62a177692}</Project>
       <Name>Dora.WeddingPlanner.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dora.WeddingPlanner.Model.DTO\Dora.WeddingPlanner.Model.DTO.csproj">
+      <Project>{017e9bb1-cf61-40d5-9441-9b4424543ce0}</Project>
+      <Name>Dora.WeddingPlanner.Model.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dora.WeddingPlanner.Model\Dora.WeddingPlanner.Model.csproj">
       <Project>{b69b1933-553d-4d55-b69b-560be88f08fa}</Project>

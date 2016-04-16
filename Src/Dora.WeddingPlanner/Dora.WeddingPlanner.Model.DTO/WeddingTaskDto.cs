@@ -8,6 +8,8 @@ namespace Dora.WeddingPlanner.Model.DTO
 {
     public sealed class WeddingTaskDto
     {
+        public string Id { get; private set; }
+
         public enum TaskPriority
         {
             Basic,

@@ -19,6 +19,7 @@ namespace Dora.WeddingPlanner.TestingPlayground
 
             var dto = wedding.Map();
 
+            var model = dto.Map();
 
             Console.WriteLine("Done @ {0}", DateTime.Now);
             Console.ReadLine();

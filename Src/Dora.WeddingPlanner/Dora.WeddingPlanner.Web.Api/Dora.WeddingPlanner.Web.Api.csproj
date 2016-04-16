@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dora.WeddingPlanner.Model.DTO\Dora.WeddingPlanner.Model.DTO.csproj">
+      <Project>{017e9bb1-cf61-40d5-9441-9b4424543ce0}</Project>
+      <Name>Dora.WeddingPlanner.Model.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dora.WeddingPlanner.UserInteraction\Dora.WeddingPlanner.UserInteraction.csproj">
       <Project>{58a3aa54-a317-4939-9e33-8c04ce866893}</Project>
       <Name>Dora.WeddingPlanner.UserInteraction</Name>

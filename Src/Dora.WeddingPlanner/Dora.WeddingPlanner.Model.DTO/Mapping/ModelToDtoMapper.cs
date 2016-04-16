@@ -19,6 +19,7 @@ namespace Dora.WeddingPlanner.Model.DTO.Mapping
                 cfg.CreateMap<Comment, CommentDto>()
                     .ForMember(d => d.Timestamp, o => o.MapFrom(x => x.On));
                 cfg.CreateMap<Person, PersonDto>();
+                cfg.CreateMap<PredefinedWeddingTask, WeddingTaskDto>();
                 cfg.CreateMap<WeddingTask, WeddingTaskDto>()
                     .ForMember(d => d.IsClosed, o => o.ResolveUsing((r, t) => t.IsClosed()))
                     .ForMember(d => d.Priority, o => o.ResolveUsing((r, t) => MapPriority(t)));
@@ -42,9 +43,6 @@ namespace Dora.WeddingPlanner.Model.DTO.Mapping
             return WeddingTaskDto.TaskPriority.Basic;
         }
 
-        public static WeddingDto Map(Wedding wedding)
-        {
-            return map.Map<WeddingDto>(wedding);
-        }
+        public static IMapper Do { get { return map; } }
     }
 }
