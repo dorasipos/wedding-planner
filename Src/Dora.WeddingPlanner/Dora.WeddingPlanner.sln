@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Core", "Dora.WeddingPlanner.Core\Dora.WeddingPlanner.Core.csproj", "{D6CC927D-B2AB-4686-BE11-05B0B137EEEA}"
 EndProject
@@ -49,6 +49,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Logging", "Dora.WeddingPlanner.Logging\Dora.WeddingPlanner.Logging.csproj", "{E66A610E-912F-46DB-898D-0FF62A177692}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Tracing", "Dora.WeddingPlanner.Tracing\Dora.WeddingPlanner.Tracing.csproj", "{75346587-F802-448A-A8AB-F9BDAC90FC74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora.WeddingPlanner.Model.DTO", "Dora.WeddingPlanner.Model.DTO\Dora.WeddingPlanner.Model.DTO.csproj", "{017E9BB1-CF61-40D5-9441-9B4424543CE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,6 +110,10 @@ Global
 		{75346587-F802-448A-A8AB-F9BDAC90FC74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75346587-F802-448A-A8AB-F9BDAC90FC74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75346587-F802-448A-A8AB-F9BDAC90FC74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{017E9BB1-CF61-40D5-9441-9B4424543CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{017E9BB1-CF61-40D5-9441-9B4424543CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{017E9BB1-CF61-40D5-9441-9B4424543CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{017E9BB1-CF61-40D5-9441-9B4424543CE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

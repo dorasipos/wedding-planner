@@ -17,11 +17,6 @@ namespace Dora.WeddingPlanner.Data.Persistence.FileSystem
         public JsonFileWeddingStore(string baseFolderPath)
         {
             this.storageBasePath = baseFolderPath;
-
-            JsonConvert.DefaultSettings = () => new JsonSerializerSettings
-            {
-                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
-            };
         }
 
         public IEnumerable<StorableWedding> All()
