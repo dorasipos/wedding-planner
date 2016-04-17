@@ -7,21 +7,66 @@ using Dora.WeddingPlanner.Data.Model;
 using Dora.WeddingPlanner.Model;
 using System.IO;
 using Newtonsoft.Json;
+using Dora.WeddingPlanner.Model.DTO;
+using Dora.WeddingPlanner.Model.DTO.Mapping;
+using JsonNet.PrivateSettersContractResolvers;
 
 namespace Dora.WeddingPlanner.Data.Persistence.FileSystem
 {
     public class JsonFileWeddingStore : ICanStoreWeddings
     {
+        private class SerializableWedding
+        {
+            [JsonConstructor]
+            private SerializableWedding() { }
+
+            public string Id { get; set; }
+            public WeddingDto Wedding { get; set; }
+
+            public StorableWedding ToStorableWedding()
+            {
+                return StorableWedding.Existing(this.Id, this.Wedding.Map());
+            }
+
+            public static SerializableWedding FromStorableWedding(StorableWedding wedding)
+            {
+                return new SerializableWedding
+                {
+                    Id = wedding.Id,
+                    Wedding = wedding.Wedding.Map()
+                };
+            }
+        }
+
         private readonly string storageBasePath;
+        private readonly DirectoryInfo storageDirectory;
 
         public JsonFileWeddingStore(string baseFolderPath)
         {
             this.storageBasePath = baseFolderPath;
+            this.storageDirectory = new DirectoryInfo(baseFolderPath);
+
+            Newtonsoft.Json.
+
+            JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+            {
+                ContractResolver = new PrivateSetterContractResolver()
+            };
         }
 
         public IEnumerable<StorableWedding> All()
         {
-            throw new NotImplementedException();
+            EnsureStoreFolder();
+
+            return this.storageDirectory
+                .EnumerateDirectories()
+                .Select(d => StorableWedding.Existing(d.Name, SummaryFor(d.Name)));
+        }
+
+        private Wedding SummaryFor(string weddingId)
+        {
+            var metadata = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(string.Format(@"{0}\{1}.meta.json", WeddingFolder(weddingId), weddingId)));
+            return new Wedding(new Person(metadata["Bride"], string.Empty), new Person(metadata["Groom"], string.Empty));
         }
 
         public Wedding Load(string id)
@@ -31,25 +76,24 @@ namespace Dora.WeddingPlanner.Data.Persistence.FileSystem
             {
                 return null;
             }
-            var a = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(filePath)).Wedding;
-            return a;
+            return JsonConvert.DeserializeObject<SerializableWedding>(File.ReadAllText(filePath)).ToStorableWedding().Wedding;
         }
 
         public void Save(StorableWedding wedding)
         {
             string folder = EnsureWeddingFolderFor(wedding.Id);
 
-            File.WriteAllText(string.Format(@"{0}\{1}.data.json", WeddingFolder(wedding.Id), wedding.Id), JsonConvert.SerializeObject(wedding, Formatting.Indented));
+            File.WriteAllText(string.Format(@"{0}\{1}.data.json", WeddingFolder(wedding.Id), wedding.Id), JsonConvert.SerializeObject(SerializableWedding.FromStorableWedding(wedding), Formatting.Indented));
             File.WriteAllText(string.Format(@"{0}\{1}.meta.json", WeddingFolder(wedding.Id), wedding.Id), JsonConvert.SerializeObject(MetadataFor(wedding), Formatting.Indented));
         }
 
-        private KeyValuePair<string, string>[] MetadataFor(StorableWedding wedding)
+        private Dictionary<string, string> MetadataFor(StorableWedding wedding)
         {
-            return new KeyValuePair<string, string>[]
+            return new Dictionary<string, string>
             {
-                new KeyValuePair<string, string>("Id", wedding.Id.ToString()),
-                new KeyValuePair<string, string>("Bride", wedding.Wedding.Bride.ToString()),
-                new KeyValuePair<string, string>("Groom", wedding.Wedding.Groom.ToString()),
+                { "Id", wedding.Id.ToString() },
+                { "Bride", wedding.Wedding.Bride.ToString() },
+                { "Groom", wedding.Wedding.Groom.ToString() }
             };
         }
 
@@ -61,6 +105,14 @@ namespace Dora.WeddingPlanner.Data.Persistence.FileSystem
                 Directory.CreateDirectory(weddingFolderPath);
             }
             return weddingFolderPath;
+        }
+
+        private void EnsureStoreFolder()
+        {
+            if (!this.storageDirectory.Exists)
+            {
+                this.storageDirectory.Create();
+            }
         }
 
         private string WeddingFolder(string id)

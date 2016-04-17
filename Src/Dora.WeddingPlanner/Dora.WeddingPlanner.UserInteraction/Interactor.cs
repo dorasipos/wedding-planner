@@ -35,7 +35,8 @@ namespace Dora.WeddingPlanner.UserInteraction
 
         private static void InitializeStore()
         {
-            weddingStore = new NDatabaseWeddingStore("WeddingStore.ndata.odb");
+            //weddingStore = new NDatabaseWeddingStore("WeddingStore.ndata.odb");
+            weddingStore = new JsonFileWeddingStore("JsonStore");
         }
 
         internal static ICanStoreWeddings Store
