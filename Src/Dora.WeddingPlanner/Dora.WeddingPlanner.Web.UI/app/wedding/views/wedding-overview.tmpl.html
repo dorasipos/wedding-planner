@@ -10,13 +10,9 @@
 
         <md-content ng-show="wedding.tasks.length" flex="auto" layout-align="center center" layout-margin>
 
-            <h2 class="md-title" layout-align="center center">{{wedding.tasks[0].title}}</h2>
-            <p class="md-subhead">{{wedding.tasks[0].details[0].content}}</p>
-            <div layout="coumn">
-                <md-button flex="auto" class="md-raised">
-                    Open
-                    <md-icon>launch</md-icon>
-                </md-button>
+            <div class="clickable" ng-click="goTo('/task/0')">
+                <h2 class="md-title" layout-align="center center" ng-click="">{{wedding.tasks[0].title}}</h2>
+                <p class="md-subhead">{{wedding.tasks[0].details[0].content}}</p>
             </div>
 
         </md-content>
@@ -37,12 +33,6 @@
 
             <h2 class="md-title" layout-align="center center">{{wedding.events[0].title}}</h2>
             <p class="md-subhead">{{wedding.events[0].details[0].content}}</p>
-            <div layout="coumn">
-                <md-button flex="auto" class="md-raised">
-                    Open
-                    <md-icon>launch</md-icon>
-                </md-button>
-            </div>
 
         </md-content>
 
