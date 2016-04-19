@@ -1,4 +1,4 @@
-﻿(function (ng) {
+﻿(function (ng, undefined) {
     'use strict';
 
     ng.module('wedding')
@@ -12,7 +12,7 @@
         this.current = function () {
             var deff = $q.defer();
 
-            if ($p.weddingId !== weddingId) {
+            if ($p.weddingId !== undefined && $p.weddingId !== weddingId) {
                 weddingId = $p.weddingId;
                 wedding = null;
             }
