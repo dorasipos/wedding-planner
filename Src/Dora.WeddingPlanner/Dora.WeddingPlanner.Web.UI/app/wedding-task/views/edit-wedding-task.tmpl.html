@@ -1,6 +1,9 @@
 ﻿<div>
     <md-subheader>
-        <h2>{{task.title}}</h2>
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>Title</label>
+            <input ng-model="task.title" class="md-title">
+        </md-input-container>
     </md-subheader>
     <md-content flex layout-padding>
         <p>

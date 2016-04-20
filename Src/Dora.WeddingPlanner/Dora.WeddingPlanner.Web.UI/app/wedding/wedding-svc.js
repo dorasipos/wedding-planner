@@ -1,10 +1,10 @@
-﻿(function (ng, undefined) {
+﻿(function (ng, session, undefined) {
     'use strict';
 
     ng.module('wedding')
     .service('wedding', ['$routeParams', '$http', '$q', function ($p, $http, $q) {
 
-        var weddingId = $p.weddingId,
+        var weddingId = $p.weddingId || session.weddingId,
             wedding = null;
 
         this.id = function () { return weddingId; }
@@ -13,7 +13,7 @@
             var deff = $q.defer();
 
             if ($p.weddingId !== undefined && $p.weddingId !== weddingId) {
-                weddingId = $p.weddingId;
+                session.weddingId = weddingId = $p.weddingId;
                 wedding = null;
             }
 
@@ -21,7 +21,7 @@
                 deff.resolve(wedding);
             }
             else {
-                $http.get('../wedding/' + $p.weddingId)
+                $http.get('../wedding/' + weddingId)
                     .success(function (queryResult) {
                         wedding = queryResult.result;
                         deff.resolve(wedding);
@@ -34,10 +34,11 @@
         };
 
         this.refresh = function () {
+            delete session.weddingId;
             wedding = null;
             return this;
         };
 
     }]);
 
-})(this.angular);
+})(this.angular, this.sessionStorage);
