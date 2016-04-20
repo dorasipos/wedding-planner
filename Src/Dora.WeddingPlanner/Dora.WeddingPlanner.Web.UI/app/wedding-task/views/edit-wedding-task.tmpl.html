@@ -1,13 +1,27 @@
 ﻿<div>
-    <md-subheader>
+    <md-subheader flex>
         <md-input-container class="md-block" flex-gt-xs>
             <label>Title</label>
             <input ng-model="task.title" class="md-title">
         </md-input-container>
     </md-subheader>
     <md-content flex layout-padding>
-        <p>
-            {{task.details[0].content}}
-        </p>
+        <md-input-container class="md-block" flex-gt-xs layout-padding>
+            <label>Description</label>
+            <textarea ng-model="task.details[0].content" class="md-body-1"></textarea>
+        </md-input-container>
     </md-content>
+
+    <div layout-gt-sm="column">
+        <md-button class="md-raised md-primary" ng-click="submit()" ng-disabled="submit.ing">
+            <span ng-hide="submit.ing">OK, submit changes</span>
+            <span ng-show="submit.ing">
+                <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+                Saving...
+            </span>
+        </md-button>
+
+        <md-button ng-click="cancel($event)">Cancel, nevermind...</md-button>
+    </div>
+
 </div>
